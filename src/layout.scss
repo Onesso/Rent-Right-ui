@@ -11,20 +11,20 @@
     padding-right: 20px;
 
     @include responsive.lg {
-        background-color: rgb(255, 255, 255);
+        background-color: #ffffff;
     }
 
     @include responsive.md {
-        background-color: rgb(241, 230, 226);
+        background-color: rgb(255, 255, 255);
         max-width: 520px;
     }
 
     @include responsive.sm {
-        background-color: rgb(222, 230, 244);
+        background-color: rgb(255, 255, 255);
         max-width: 400px;
     }
 
     @include responsive.xsm {
-        background-color: rgb(234, 243, 243);
+        background-color: rgb(255, 255, 255);
     }
 }

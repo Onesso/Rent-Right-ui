@@ -1,79 +1,97 @@
 @use "./../../responsive.scss";
 
 nav {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    transition: all 0.4s ease;
+
+    @include responsive.sm {
+      display: none;
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  .left {
+    flex: 3;
     display: flex;
-    height: 100px;
-    justify-content: space-between;
     align-items: center;
+    gap: 30px;
 
-    a{
-        transition: all 0.4s ease;
+    .logo {
+      display: flex;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 20px;
+      align-items: center;
 
+      img {
+        width: 28px;
+      }
+      span {
+        @include responsive.md {
+          display: none;
+        }
         @include responsive.sm {
-            display: none;
+          display: initial;
         }
+      }
+    }
+  }
 
-        &:hover{
-            scale: 1.1;
-        }
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    @include responsive.md{
+      background-color: transparent;
     }
 
-    .left{
-        flex: 3;
-        display: flex;
-        align-items: center;
-        gap: 30px;
-
-        .logo{
-            display: flex;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 20px;
-            align-items: center;
-
-            img{
-                width: 28px;
-            }
-            span {
-                @include responsive.md {
-                    display: none;
-                }
-                @include responsive.sm {
-                    display: initial;
-                }
-
-            }
-
-        }
+    a {
+      padding: 12px 20px;
+      margin: 10px;
     }
 
-    .right{
-        flex: 2;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        background-color: #fcf5f3;
-        height: 100%;
-
-        a{
-            padding: 12px 20px;
-            margin: 10px;
-        }
-
-        .register{
-            background-color: #fece51;
-        }
-
-        .menuIcon{
-            display: none;
-
-            @include responsive.sm {
-                display: initial;
-            }
-
-            img{
-                width: 28px;
-            }
-        }
+    .register {
+      background-color: #fece51;
     }
+
+    .menuIcon {
+      display: none;
+
+      img {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+      }
+
+      @include responsive.sm {
+        display: initial;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -100%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+
+      &.active {
+        right: 0px;
+      }
+    }
+  }
 }
