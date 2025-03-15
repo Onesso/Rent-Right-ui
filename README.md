@@ -29,5 +29,7 @@ on having the navBar the menu icon disappear; chnage the z-index of the menu bar
 
 since we had set all the anchor tag (links) to display: none; the menu items do not appear therefore we'll revert;
 
+align the menu itmes in small screen to be vertically an spaced
+
 
 
