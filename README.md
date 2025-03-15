@@ -23,5 +23,11 @@ still in the small screen the list of menu is placed absolute (inajificha) (posi
 
 on Clicking the menu navigation appears; useState to hold the values
 
-we should alternate the value of the clssName in that when True or False of the useState it takes the required class
+we should alternate the value of the clssName in that when True or False of the useState it takes the required class; one classname allow to have the navbar and vice vercer
+
+on having the navBar the menu icon disappear; chnage the z-index of the menu bar icon.
+
+since we had set all the anchor tag (links) to display: none; the menu items do not appear therefore we'll revert;
+
+
 
