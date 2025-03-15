@@ -16,6 +16,9 @@ export default function Navbar() {
       <div className="right">
         <a href='/'>Sign in</a>
         <a href='/' className='register'>Sign up</a>
+        <div className='menuIcon'>
+          <img src="/menu.png" alt='menu' />
+        </div>
       </div>
     </nav>
   );

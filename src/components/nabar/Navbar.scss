@@ -9,6 +9,10 @@ nav {
     a{
         transition: all 0.4s ease;
 
+        @include responsive.sm {
+            display: none;
+        }
+
         &:hover{
             scale: 1.1;
         }
@@ -30,6 +34,15 @@ nav {
             img{
                 width: 28px;
             }
+            span {
+                @include responsive.md {
+                    display: none;
+                }
+                @include responsive.sm {
+                    display: initial;
+                }
+
+            }
 
         }
     }
@@ -49,6 +62,18 @@ nav {
 
         .register{
             background-color: #fece51;
+        }
+
+        .menuIcon{
+            display: none;
+
+            @include responsive.sm {
+                display: initial;
+            }
+
+            img{
+                width: 28px;
+            }
         }
     }
 }
