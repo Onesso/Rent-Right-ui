@@ -1,0 +1,20 @@
+@use "./../../../responsive.scss";
+
+.homepage {
+    display: flex;
+    height: 100%;
+
+    .textcontainer {
+        flex: 3;
+        
+    }
+
+    .imagecontainer {
+        flex: 2;
+        background-color: #fcf5f3;
+
+        img {
+            width: 100%;
+         }
+    }
+}
