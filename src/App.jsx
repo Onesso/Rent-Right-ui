@@ -9,9 +9,9 @@ function App() {
         <Navbar />
       </div>
 
-      <dic className="content">
+      <div className="content">
         <Homepage />
-      </dic>
+      </div>
     </div>
   );
 }

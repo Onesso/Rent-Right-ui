@@ -59,6 +59,46 @@ styling the image; it should over flow to the left a little bit; it is achieve b
 
             position absolute well see which is the closest postion relative and compare to it, if no position relative it will compare to with left side of the web page therefore most of the parent is given position relative so that there child can reference that parent ot compare its postion as in our case the the imagecontainer and the img
 
+Below the text add the serachbar component; due to complexity we'll create a component and import it to the home page
+
+on the search bar the two button have a functionality whereby at start the Buy is active and the button has a different background
+
+the following are detail explanation:
+
+This code is a simple React component for a search bar that helps users search for properties to either "buy" or "rent". Here's a breakdown of what it does:
+
+1. **Imports**:
+   - It imports React and a CSS file (`searchbar.scss`) for styling.
+   - It also imports `useState`, a React hook used to manage state (data that can change).
+
+2. **Types**:
+   - There's a list called `types` with two options: "buy" and "rent". These are the two choices the user can pick from.
+
+3. **State**:
+   - The `useState` hook is used to create a state variable called `query`. This keeps track of the user's search preferences:
+     - `type`: "buy" or "rent" (default is "buy").
+     - `location`: The city or area the user is searching in.
+     - `minPrice` and `maxPrice`: The price range the user is interested in.
+
+4. **Switch Type Function**:
+   - The `switchtype` function updates the `type` in the `query` state when the user clicks either "buy" or "rent". It ensures the selected option is highlighted as "active".
+
+5. **Rendered JSX**:
+   - The component renders a search bar with:
+     - Two buttons for "buy" and "rent". Clicking a button updates the `type` in the `query`.
+     - A form with:
+       - A text input for the location (city or area).
+       - Two number inputs for the minimum and maximum price.
+       - A search button with an icon (likely a magnifying glass).
+
+6. **Styling**:
+   - The `className` for the buttons changes to "active" when a button is selected, so it can be styled differently (e.g., highlighted).
+
+In simple terms, this is a search bar where users can:
+- Choose between buying or renting.
+- Enter a location and price range.
+- Click a search button to find properties.
+
 
 
 
