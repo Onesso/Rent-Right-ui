@@ -53,6 +53,12 @@ now style the App.jsx; the navbar is 100px the rest should be the home page. dis
 
 in the homepage partition it into two the left(Text) and the right (image) the right has a different bgcolor with an image with no background so that it can take the pages background color.
 
+styling the image; it should over flow to the left a little bit; it is achieve by increasing the width percentage to prevent it from explanding to the right image cntainer position relative and img tag position absolute
+
+            NOTE: What is the difference between position relative and absolute in styling
+
+            position absolute well see which is the closest postion relative and compare to it, if no position relative it will compare to with left side of the web page therefore most of the parent is given position relative so that there child can reference that parent ot compare its postion as in our case the the imagecontainer and the img
+
 
 
 

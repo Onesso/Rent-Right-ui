@@ -6,15 +6,18 @@
 
     .textcontainer {
         flex: 3;
-        
+
     }
 
     .imagecontainer {
         flex: 2;
         background-color: #fcf5f3;
+        position: relative;
 
         img {
-            width: 100%;
-         }
+            width: 110%;
+            position: absolute;
+            right: 0;
+        }
     }
 }
