@@ -21,6 +21,7 @@ export default function Searchbar() {
 
   return (
     <div className="searchbar">
+        
       <div className="type">
         {types.map((type) => (
           <button
@@ -32,6 +33,7 @@ export default function Searchbar() {
           </button>
         ))}
       </div>
+
       <form>
         <input type="text" name="location" placeholder="City location" />
         <input
@@ -48,10 +50,13 @@ export default function Searchbar() {
           max={100000}
           placeholder="max price"
         />
+
         <button>
           <img src="./search.png" />
         </button>
       </form>
+
+
     </div>
   );
 }
