@@ -15,10 +15,27 @@
       gap: 30px;
       height: 100%;
 
-      p
+      @include responsive.md {
+        padding-right: 50px;
+        gap: 15px;
+       
+      }
+
 
       .title {
         font-size: 48px;
+
+        @include responsive.md {
+          font-size: 26px;
+        }
+
+        .description {
+
+          @include responsive.md {
+            font-size: 12px;
+          }
+
+        }
       }
 
       .boxes {
@@ -48,6 +65,12 @@
       width: 110%;
       position: absolute;
       right: 0;
+
+      @include responsive.md{
+        width: 90%;
+
+      }
+
     }
   }
 }

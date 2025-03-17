@@ -5,7 +5,6 @@ export default function Homepage() {
   return (
     <div className="homepage">
       <div className="textcontainer">
-
         <div className="wrapper">
           <h1 className="title">Rent Right let us find you your dream home</h1>
           <p className="description">
@@ -32,11 +31,10 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="imagecontainer">
-        <img src="./public/bg.png" alt="home-image" />
+        <img src="/bg.png" alt="home-image" />
       </div>
     </div>
   );
