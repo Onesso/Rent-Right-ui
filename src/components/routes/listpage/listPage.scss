@@ -8,13 +8,23 @@
 
   .listContainer {
     flex: 3;
+    //scrowl
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    //
 
     .wrapper {
       padding-right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      overflow-y: scroll;
     }
   }
 
   .mapContainer {
     flex: 2;
+    background-color: plum;
   }
 }

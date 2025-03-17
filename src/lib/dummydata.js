@@ -1,9 +1,10 @@
 const listData = [
+  // export default listData = [
   {
     id: 1,
     title: "A great Apartment Next to the Beach!",
     images: [
-      "https://images.pexels.com/photos/1239297/pexels-photo-1239297.jpeg",
+      "https://i.roamcdn.net/prop/brk/gallery-main-900w-watermark/a02c97e40c963a6b7b0fa6a15ab5ce6d/-/prod-property-core-backend-media-brk/7724075/7f28e6af-9c9a-4704-817b-926c3deb7977.jpg",
     ],
     bedroom: 2,
     bathroom: 1,

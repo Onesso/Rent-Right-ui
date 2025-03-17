@@ -111,6 +111,16 @@ inside App.js we want to make the website in that the navbar we'll be in every p
 
 for single item we'll be using there id; each item will it own id therefore in App.jsx this is how the path is written: path: "/:id",
 
+The listPage is partition into two; the map and the items plus filter section.
+
+the items side is further divided into two the filter and the listr of cards ( both the filter and card are separeted components declared outside the listpage)
+
+we have a dummy data that we have import into the listpage. the data is used to map the cards
+
+inside the listpage the map should be fixed and the list of properties should be scrowlable
+
+the list is scrowlable and the images are rendering
+
 
 
 

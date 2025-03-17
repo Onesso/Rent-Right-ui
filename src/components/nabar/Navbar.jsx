@@ -15,6 +15,7 @@ export default function Navbar() {
         <a href="/">Contact</a>
         <a href="/">Agent</a>
       </div>
+      
       <div className="right">
         <a href="/">Sign in</a>
         <a href="/" className="register">
