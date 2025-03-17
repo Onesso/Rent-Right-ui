@@ -109,6 +109,9 @@ create another router (page) listpage. we'll use react router to navigate to thi
 inside App.js we want to make the website in that the navbar we'll be in every page. thefore the layout of the page is place in its directory, whereby it only have the <Navbar /> and the outlets(the other component) outlet is written there to symbolise there is a list of other components but the actual components are place inside the App.js as Children.
 
 
+for single item we'll be using there id; each item will it own id therefore in App.jsx this is how the path is written: path: "/:id",
+
+
 
 
 

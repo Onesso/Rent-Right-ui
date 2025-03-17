@@ -1,5 +1,20 @@
-@use '../../../responsive.scss';
-.listpage {
-    
+@use "../../../responsive.scss";
 
+.listpage {
+  display: flex;
+  height: 100%;
+
+  background-color: #ffffff;
+
+  .listContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 30px;
+    }
+  }
+
+  .mapContainer {
+    flex: 2;
+  }
 }
