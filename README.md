@@ -121,6 +121,8 @@ inside the listpage the map should be fixed and the list of properties should be
 
 the list is scrowlable and the images are rendering
 
+Now on the right side we are implimenting the map; we'll be implimenting it by using react leaflet
+
 
 
 
