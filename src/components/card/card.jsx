@@ -5,7 +5,7 @@ export default function Card({ item }) {
   console.log();
   return (
     <div className="Card">
-      <Link to={`/${item}`} className="imageContainer">
+      <Link to={`/${item.id}`} className="imageContainer">
         <img src={item.images} alt="property image" />
       </Link>
 

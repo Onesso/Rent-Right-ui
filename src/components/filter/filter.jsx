@@ -1,11 +1,11 @@
 import "/search.png";
-import "./filter.scss"
+import "./filter.scss";
 
 export default function Filter() {
   return (
     <div className="Filter">
       <h1>
-        Search results for <br /> Nairobi
+        Search results for <b>Nairobi</b>
       </h1>
 
       <div className="top">
@@ -60,12 +60,7 @@ export default function Filter() {
         </div>
         <div className="item">
           <label htmlFor="bedroom">Bedroom</label>
-          <input
-            type="text"
-            name="bedroom"
-            id="bedroom"
-            placeholder="Any"
-          />
+          <input type="text" name="bedroom" id="bedroom" placeholder="Any" />
         </div>
         <button>
           <img src="/search.png" alt="" />

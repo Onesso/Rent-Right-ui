@@ -123,6 +123,11 @@ the list is scrowlable and the images are rendering
 
 Now on the right side we are implimenting the map; we'll be implimenting it by using react leaflet
 
+Leaflet comes with its own css out of the box; import "leaflet/dist/leaflet.css";
+we'll use it to implement the map
+
+
+
 
 
 
