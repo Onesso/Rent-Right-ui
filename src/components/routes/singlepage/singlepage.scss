@@ -1,2 +1,84 @@
 .Singlepage {
+  display: flex;
+  height: 100%;
+
+  .details {
+    flex: 3;
+    .wrapper {
+      padding-right: 50px;
+      // overflow-y: scroll;
+
+      .info {
+        margin-top: 20px;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h1 {
+              font-weight: 300;
+              font-size: medium;
+            }
+            .address {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: #8888;
+              font-size: 14px;
+
+              img {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            .price {
+              padding: 5px;
+              background-color: rgba(254, 205, 81, 0.438);
+              border-radius: 5px;
+              width: max-content;
+              font-size: 20px;
+              font-weight: 200;
+            }
+          }
+
+          .user {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 0px 20px;
+            border-radius: 10px;
+            background-color: rgba(245, 222, 163, 0.438);
+            font-weight: 600;
+
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+        .bottom {
+          margin-top: 40px;
+          color: #373737;
+          line-height: 20px;
+          font-weight: 300;
+          font-size: medium;
+        }
+      }
+    }
+  }
+  .features {
+    flex: 2;
+    background-color: lightgreen;
+    .wrapper {
+      padding: 0px 20px;
+    }
+  }
 }

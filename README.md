@@ -127,6 +127,15 @@ Leaflet comes with its own css out of the box; import "leaflet/dist/leaflet.css"
 we'll use it to implement the map
 
 
+# SinglePage implimentation
+
+when you click on a item or pointer in the in the list page you should be directed to the single page of the said property
+
+the single page is divided into two sections; details  and the features
+
+inside details section we have an image ( and it will be imported as it own component)
+
+when you click on the image a slider should open and fill the entire screen.
 
 
 

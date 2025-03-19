@@ -332,7 +332,7 @@ const listData = [
     price: 800,
     address: "123 Mountain Road, Ngong Hills",
     latitude: -1.3667,
-    longitude: 36.6500,
+    longitude: 36.65,
   },
   {
     id: 4,
@@ -370,7 +370,7 @@ const listData = [
     bathroom: 1,
     price: 1200,
     address: "202 Green Street, Kilimani",
-    latitude: -1.3000,
+    latitude: -1.3,
     longitude: 36.7833,
   },
   {
@@ -409,7 +409,7 @@ const listData = [
     bathroom: 2,
     price: 1900,
     address: "606 Heritage Street, Kileleshwa",
-    latitude: -1.3000,
+    latitude: -1.3,
     longitude: 36.7833,
   },
   {
@@ -448,7 +448,7 @@ const listData = [
     bathroom: 1,
     price: 1300,
     address: "909 Sunshine Road, Langata",
-    latitude: -1.3500,
+    latitude: -1.35,
     longitude: 36.8167,
   },
   {
@@ -474,8 +474,8 @@ const listData = [
     bathroom: 1,
     price: 1600,
     address: "222 Urban Street, Hurlingham",
-    latitude: -1.3000,
-    longitude: 36.8000,
+    latitude: -1.3,
+    longitude: 36.8,
   },
   {
     id: 15,
@@ -487,8 +487,8 @@ const listData = [
     bathroom: 2,
     price: 1100,
     address: "333 Country Road, Limuru",
-    latitude: -1.1000,
-    longitude: 36.6500,
+    latitude: -1.1,
+    longitude: 36.65,
   },
   {
     id: 16,
@@ -500,7 +500,7 @@ const listData = [
     bathroom: 2,
     price: 1800,
     address: "444 Fitness Avenue, Thika Road",
-    latitude: -1.0500,
+    latitude: -1.05,
     longitude: 37.0833,
   },
   {
@@ -513,7 +513,7 @@ const listData = [
     bathroom: 1,
     price: 950,
     address: "555 Coastal Lane, Athi River",
-    latitude: -1.4500,
+    latitude: -1.45,
     longitude: 36.9833,
   },
   {
@@ -552,7 +552,7 @@ const listData = [
     bathroom: 3,
     price: 2100,
     address: "888 Greenway Drive, Ruaka",
-    latitude: -1.2000,
+    latitude: -1.2,
     longitude: 36.8167,
   },
 ];
@@ -583,8 +583,8 @@ export const singlePostData = {
 
 export const userData = {
   id: "1",
-  name: "Yusuf Koroglu",
-  img: "https://media.licdn.com/dms/image/v2/D4D35AQGmT4FP6dxzFQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1669987952817?e=1729177200&v=beta&t=jtmrCe8dR50Se34FYr1jTPEHMT9sVANivUeiXsJ52fM",
+  name: "Makori Karoli",
+  img: "https://i.pinimg.com/474x/50/27/04/502704bb8047eac69396c5db1064dd38.jpg",
 };
 
 export default listData;
