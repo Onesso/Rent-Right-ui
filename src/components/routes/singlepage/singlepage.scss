@@ -1,12 +1,32 @@
+@use "../../../responsive.scss";
+
 .Singlepage {
   display: flex;
   height: 90vh;
   overflow-y: scroll;
+  margin-bottom: 50px;
+
+  @include responsive.md {
+    flex-direction: column;
+    height: 80vh;
+    overflow: scroll;
+  }
+
+  @include responsive.sm {
+    flex-direction: column;
+    overflow: none;
+    height: max-content;
+  }
 
   .details {
     flex: 3;
     height: 100vh;
     overflow-y: scroll;
+
+    @include responsive.md {
+      flex: none;
+      height: max-content;
+    }
 
     .wrapper {
       padding-right: 50px;
@@ -40,7 +60,7 @@
 
             .price {
               padding: 5px;
-              background-color: rgba(254, 205, 81, 0.438);
+              background-color: rgba(237, 176, 22, 0.438);
               border-radius: 5px;
               width: max-content;
               font-size: 20px;
@@ -78,14 +98,17 @@
     }
   }
 
-
-
-
   .features {
     flex: 2;
     background-color: #fcf5f3;
     height: 100vh;
     overflow-y: scroll;
+
+    @include responsive.md {
+      flex: none;
+      height: max-content;
+    }
+
 
     .wrapper {
       padding: 0px 20px;
@@ -196,7 +219,6 @@
       .checkout {
         display: flex;
         flex-direction: column;
-       
 
         button {
           padding: 10px 10px;

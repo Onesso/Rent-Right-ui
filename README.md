@@ -144,6 +144,8 @@ the logic is that when you click on the left arrow you move to the prevous page 
 
 All the components are placed in the single page
 
+styling the singlepage to fit all the screen type
+
 
 
 
