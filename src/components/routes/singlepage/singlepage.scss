@@ -1,12 +1,15 @@
 .Singlepage {
   display: flex;
-  height: 100%;
+  height: 90vh;
+  overflow-y: scroll;
 
   .details {
     flex: 3;
+    height: 100vh;
+    overflow-y: scroll;
+
     .wrapper {
       padding-right: 50px;
-      // overflow-y: scroll;
 
       .info {
         margin-top: 20px;
@@ -74,11 +77,145 @@
       }
     }
   }
+
+
+
+
   .features {
     flex: 2;
-    background-color: lightgreen;
+    background-color: #fcf5f3;
+    height: 100vh;
+    overflow-y: scroll;
+
     .wrapper {
       padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+      overflow-y: scroll;
+
+      img {
+        height: 18px;
+        width: 18px;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          background-color: rgba(254, 205, 81, 0.138);
+        }
+
+        .featurText {
+          span {
+            font-weight: bold;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border: 10px;
+        padding: 10px 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+      .listHorizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 10px;
+        background-color: white;
+        border-radius: 10px;
+
+        .featurText {
+          span {
+            font-weight: 300;
+          }
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+      .Size {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        padding: 20px 10px;
+        border-radius: 10px;
+
+        .sizes {
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          span {
+            font-size: 12px;
+          }
+          img {
+            background-color: rgba(254, 205, 81, 0.138);
+          }
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 10px;
+        background-color: white;
+
+        button {
+          padding: 10px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          background-color: white;
+          cursor: pointer;
+
+          &:hover {
+            scale: 1.05;
+            transition: all 0.5s;
+          }
+        }
+      }
+      .checkout {
+        display: flex;
+        flex-direction: column;
+       
+
+        button {
+          padding: 10px 10px;
+          border-radius: 10px;
+          border: none;
+          color: white;
+          background-color: #4ce0a2;
+
+          &:hover {
+            scale: 1.05;
+            transition: all 0.5s;
+            background-color: #eaff00;
+          }
+
+          &:active {
+            background-color: #fbff00;
+          }
+        }
+      }
     }
   }
 }

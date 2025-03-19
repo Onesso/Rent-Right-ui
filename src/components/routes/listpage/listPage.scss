@@ -10,21 +10,25 @@
     flex: 3;
     height: 100%;
 
+
     .wrapper {
       height: 100%;
-      padding-right: 50px;
+      padding-right: 40px;
       display: flex;
       flex-direction: column;
       gap: 50px;
       overflow-y: scroll;
-    
+
       padding-bottom: 120px;
     }
   }
 
   .mapContainer {
+    position: relative;
     flex: 2;
     height: 100%;
-    width: 160px;
+    width: calc(100%);
+
+
   }
 }

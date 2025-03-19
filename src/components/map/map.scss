@@ -1,6 +1,10 @@
 .map {
+  position: absolute;
   height: 100%;
-  width: 100%;
-  border-radius: 10px;
+  // width: 100%;
+  width: calc(100% + 155px);
+  // z-index: 0;
+  // width: calc(100%);
+  // border-radius: 10px;
 
 }

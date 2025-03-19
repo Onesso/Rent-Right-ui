@@ -142,6 +142,8 @@ when you click on the image a slider should open and fill the entire screen.
 
 the logic is that when you click on the left arrow you move to the prevous page upto the first one and when you click on the right arrow you move up to the last one
 
+All the components are placed in the single page
+
 
 
 
