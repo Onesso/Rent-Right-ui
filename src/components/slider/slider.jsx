@@ -6,12 +6,33 @@ export default function Slider({ images }) {
   const [imageIndex, setImageIndex] = useState(null);
   console.log("imageIndex:", imageIndex);
 
+  const changeSlide = (direction) => {
+    if (direction == "Left") {
+      if (imageIndex == 0) {
+        setImageIndex(images.length - 1);
+      } else {
+        setImageIndex(imageIndex - 1);
+      }
+    } else {
+      if (imageIndex == images.length - 1) {
+        setImageIndex(0);
+      } else {
+        setImageIndex(imageIndex + 1);
+      }
+    }
+  };
+
   return (
     <div className="slider">
       {imageIndex !== null && (
         <div className="fullSlider">
           <div className="arrow">
-            <img src="/arrow.png" className="directionArrowsLeft" alt="" />
+            <img
+              src="/arrow.png"
+              className="directionArrowsLeft"
+              alt=""
+              onClick={() => changeSlide("Left")}
+            />
           </div>
 
           <div className="imageContainer">
@@ -19,7 +40,12 @@ export default function Slider({ images }) {
           </div>
 
           <div className="arrow">
-            <img src="/arrow.png" className="directionArrowRight" alt="" />
+            <img
+              src="/arrow.png"
+              className="directionArrowRight"
+              alt=""
+              onClick={() => changeSlide("Right")}
+            />
           </div>
 
           <div className="close" onClick={() => setImageIndex(null)}>
@@ -34,7 +60,11 @@ export default function Slider({ images }) {
 
       <div className="smallerImages">
         {images.slice(1).map((image, index) => (
-          <img src={image} key={index} onClick={() => setImageIndex(index + 1)} />
+          <img
+            src={image}
+            key={index}
+            onClick={() => setImageIndex(index + 1)}
+          />
         ))}
       </div>
     </div>

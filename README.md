@@ -138,6 +138,11 @@ inside details section we have an image ( and it will be imported as it own comp
 when you click on the image a slider should open and fill the entire screen.
 
 
+### implimenting the slider next and previous logic
+
+the logic is that when you click on the left arrow you move to the prevous page upto the first one and when you click on the right arrow you move up to the last one
+
+
 
 
 
