@@ -216,28 +216,29 @@
           }
         }
       }
-      .checkout {
-        display: flex;
-        flex-direction: column;
 
-        button {
-          padding: 10px 10px;
-          border-radius: 10px;
-          border: none;
-          color: white;
-          background-color: #4ce0a2;
+      // .checkout {
+      //   display: flex;
+      //   flex-direction: column;
 
-          &:hover {
-            scale: 1.05;
-            transition: all 0.5s;
-            background-color: #eaff00;
-          }
+      //   button {
+      //     padding: 10px 10px;
+      //     border-radius: 10px;
+      //     border: none;
+      //     color: white;
+      //     background-color: #4ce0a2;
 
-          &:active {
-            background-color: #fbff00;
-          }
-        }
-      }
+      //     &:hover {
+      //       scale: 1.05;
+      //       transition: all 0.5s;
+      //       background-color: #eaff00;
+      //     }
+
+      //     &:active {
+      //       background-color: #fbff00;
+      //     }
+      //   }
+      // }
     }
   }
 }

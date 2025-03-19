@@ -117,12 +117,12 @@ export default function Singlepage() {
             </button>
           </div>
 
-          <p className="title">Process payment</p>
+          {/* <p className="title">Process  payment</p>
           <div className="checkout">
             <button>
               <span> Proceed to checkout</span>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

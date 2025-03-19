@@ -3,6 +3,8 @@ import { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const user = false;
+
   return (
     <nav>
       <div className="left">
@@ -15,15 +17,23 @@ export default function Navbar() {
         <a href="/">Contact</a>
         <a href="/">Agent</a>
       </div>
-      
+
       <div className="right">
-        <a href="/">Sign in</a>
-        <a href="/" className="register">
-          Sign up
-        </a>
+        {user ? (
+          <>
+            <div></div>
+          </>
+        ) : (
+          <>
+            <a href="/">Sign in</a>
+            <a href="/" className="register">
+              Sign up
+            </a>
+          </>
+        )}
 
         <div className="menuIcon">
-          <img src="/menu.png" alt="menu" onClick={() => setOpen(!open)}/>
+          <img src="/menu.png" alt="menu" onClick={() => setOpen(!open)} />
         </div>
 
         <div className={open ? "menu active" : "menu"}>

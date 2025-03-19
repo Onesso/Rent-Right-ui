@@ -147,6 +147,12 @@ All the components are placed in the single page
 styling the singlepage to fit all the screen type
 
 
+# Profile Page
+
+to access the profile page the user must be logged in
+
+logeg in users can e able to see there profile image instead of sign in and sign up
+
 
 
 
