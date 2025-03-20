@@ -151,7 +151,11 @@ styling the singlepage to fit all the screen type
 
 to access the profile page the user must be logged in
 
-logeg in users can e able to see there profile image instead of sign in and sign up
+logged in users can e able to see there profile image instead of sign in and sign up
+
+creating a list to show suspence when loading list of properties
+
+NOTE: for seamless scrolling of different part/components of the page? set the most parent element height to 100% then the component that you want to scroll(detail/left part of the page) set the height to 100vh and overflow-y to scroll
 
 
 

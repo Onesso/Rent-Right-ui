@@ -6,6 +6,17 @@
   overflow-y: scroll;
   margin-bottom: 50px;
 
+  // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  // Hide scrollbar for Firefox
+  scrollbar-width: none;
+
+  // Hide scrollbar for IE and Edge
+  -ms-overflow-style: none;
+
   @include responsive.md {
     flex-direction: column;
     height: 80vh;
@@ -15,13 +26,13 @@
   @include responsive.sm {
     flex-direction: column;
     overflow: none;
-    height: max-content;
+    height: 100vh;
   }
 
   .details {
     flex: 3;
     height: 100vh;
-    overflow-y: scroll;
+    // overflow-y: scroll;
 
     @include responsive.md {
       flex: none;
@@ -102,13 +113,12 @@
     flex: 2;
     background-color: #fcf5f3;
     height: 100vh;
-    overflow-y: scroll;
+    // overflow-y: scroll;
 
     @include responsive.md {
       flex: none;
       height: max-content;
     }
-
 
     .wrapper {
       padding: 0px 20px;
@@ -116,7 +126,7 @@
       flex-direction: column;
       gap: 10px;
       height: 100%;
-      overflow-y: scroll;
+      // overflow-y: scroll;
 
       img {
         height: 18px;

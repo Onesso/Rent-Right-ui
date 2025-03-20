@@ -1,0 +1,72 @@
+.profilePage {
+  display: flex;
+  height: 100%;
+
+  .detail {
+    flex: 3;
+    height: 100vh;
+    overflow-y: scroll;
+
+    // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // Hide scrollbar for Firefox
+    scrollbar-width: none;
+
+    // Hide scrollbar for IE and Edge
+    -ms-overflow-style: none;
+
+    .wrapper {
+      padding-right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding-bottom: 60px;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          font-weight: 300;
+        }
+        button {
+          padding: 12px 24px;
+          background-color: #fece51;
+          border: none;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .chatComponent {
+    flex: 2;
+    background-color: #fcf5f3;
+
+    .wrapper {
+      padding: 0px 20px;
+    }
+  }
+}

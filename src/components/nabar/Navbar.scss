@@ -5,7 +5,6 @@ nav {
   height: 100px;
   justify-content: space-between;
   align-items: center;
-  
 
   a {
     transition: all 0.4s ease;
@@ -54,8 +53,58 @@ nav {
     background-color: #fcf5f3;
     height: 100%;
 
-    @include responsive.md{
+    @include responsive.md {
       background-color: transparent;
+    }
+
+    .user {
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      font-weight: bold;
+
+      @include responsive.md {
+        padding-left: 30px;
+        img {
+          display: none;
+        }
+      }
+
+      @include responsive.sm {
+        span {
+          display: none;
+        }
+      }
+
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 30px;
+      }
+
+      .profile {
+        padding: 10px 15px;
+        background-color: #fece51;
+        cursor: pointer;
+        border: none;
+        position: relative;
+
+        .notification {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background-color: red;
+          color: white;
+        }
+      }
     }
 
     a {
@@ -85,7 +134,7 @@ nav {
     .menu {
       position: absolute;
       top: 0;
-      right: -100%;
+      right: -50%;
       background-color: black;
       color: white;
       height: 100vh;
@@ -101,7 +150,7 @@ nav {
         right: 0px;
       }
       @include responsive.sm {
-        a{
+        a {
           display: initial;
           color: white;
         }
