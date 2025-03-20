@@ -1,11 +1,33 @@
+@use ".././../../responsive.scss";
+
 .profilePage {
   display: flex;
   height: 100%;
+
+  @include responsive.md {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  @include responsive.sm {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
 
   .detail {
     flex: 3;
     height: 100vh;
     overflow-y: scroll;
+
+    @include responsive.md {
+      flex: none;
+      overflow-y: scroll;
+    }
+
+    @include responsive.sm {
+      flex: none;
+      overflow-y: scroll;
+    }
 
     // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
     &::-webkit-scrollbar {
@@ -63,10 +85,22 @@
 
   .chatComponent {
     flex: 2;
+    height: 100%;
     background-color: #fcf5f3;
 
+    @include responsive.md {
+      flex: none;
+      overflow-y: scroll;
+    }
+
+    @include responsive.sm {
+      flex: none;
+      overflow-y: scroll;
+    }
+
     .wrapper {
-      padding: 0px 20px;
+      padding: 0px 10px;
+      height: 100%;
     }
   }
 }

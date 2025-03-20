@@ -1,0 +1,143 @@
+.Chat {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 35vh;
+    overflow-y: scroll;
+
+    // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // Hide scrollbar for Firefox
+    scrollbar-width: none;
+
+    // Hide scrollbar for IE and Edge
+    -ms-overflow-style: none;
+
+    h1 {
+      font-weight: 300;
+    }
+
+    .message {
+      background-color: white;
+      padding: 10px 5px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 10px;
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .chatBox {
+    height: 65vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+
+    .top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: #f7c14b85;
+      padding: 5px 10px;
+
+      .user {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+        }
+      }
+      .close {
+        cursor: pointer;
+      }
+    }
+    .center {
+      height: 30vh;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+
+      // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      // Hide scrollbar for Firefox
+      scrollbar-width: none;
+
+      // Hide scrollbar for IE and Edge
+      -ms-overflow-style: none;
+
+      .chatMessage {
+        width: 50%;
+        background-color: rgb(240, 255, 155);
+        border-radius: 10px;
+        padding: 5px;
+
+        &.own {
+          // this is how to select a class that is present in the same element
+          align-self: flex-end;
+          text-align: right;
+          background-color: rgb(209, 216, 168);
+          border-radius: 10px;
+        }
+
+        span{
+            font-size: 11px;
+
+        }
+      }
+    }
+    .bottom {
+      border-top: 2px solid #f7c14b85;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f7c14b85;
+      padding: 10px 10px;
+      gap: 20px;
+
+      textarea {
+        flex: 3;
+        height: 100%;
+        border: none;
+        padding: 2px;
+      }
+      button {
+        flex: 1;
+        height: 100%;
+        background-color: #f7c14b85;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

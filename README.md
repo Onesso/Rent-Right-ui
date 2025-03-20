@@ -158,6 +158,9 @@ creating a list to show suspence when loading list of properties
 NOTE: for seamless scrolling of different part/components of the page? set the most parent element height to 100% then the component that you want to scroll(detail/left part of the page) set the height to 100vh and overflow-y to scroll
 
 
+onClicking the message the chat becomes visible; therefore we will use useState in that it is set to null and the chat disappers when true the chat appear.
+
+
 
 
 

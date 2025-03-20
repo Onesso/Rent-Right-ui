@@ -1,5 +1,6 @@
 import "./profilePage.scss";
 import List from "../../list/list";
+import Chat from "../../chat/chat";
 
 export default function ProfilePage() {
   return (
@@ -37,8 +38,11 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
+
       <div className="chatComponent">
-        <div className="wrapper"></div>
+        <div className="wrapper">
+          <Chat />
+        </div>
       </div>
     </div>
   );
