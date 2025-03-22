@@ -9,13 +9,14 @@ add the following respective file for styling:
                                 c.  responsive.scss => writting screens break points
 
 # Nav bar
+
 To build the navbar we'll have to create a new directory inside the src; Components
 
 inside the component dir create a new directory and add two files navbar.jsx and navabar.scss
-                                a.  navbar.jsx - react code
-                                b.  navbar.scss - style code
+a. navbar.jsx - react code
+b. navbar.scss - style code
 
-inside the navbar.jsx file we'll create a a menu icon and list of menus; this are to be displayed  only on small screens.
+inside the navbar.jsx file we'll create a a menu icon and list of menus; this are to be displayed only on small screens.
 
 still in the small screen the list of menu is placed absolute (inajificha) (position: absolute;) and it will only appear when the menu icon is placed.
 
@@ -45,6 +46,7 @@ we'll be creating different pages and this pages we'll results to router that we
                     it imports other componets and manages them
 
 ## Home page
+
 inside the soure; create a dir named router inside a dir named homepage finally the two files homepage.jsx and homepage.scss
 
 inside the App.jsx import the homepage component
@@ -68,22 +70,27 @@ the following are detail explanation:
 This code is a simple React component for a search bar that helps users search for properties to either "buy" or "rent". Here's a breakdown of what it does:
 
 1. **Imports**:
+
    - It imports React and a CSS file (`searchbar.scss`) for styling.
    - It also imports `useState`, a React hook used to manage state (data that can change).
 
 2. **Types**:
+
    - There's a list called `types` with two options: "buy" and "rent". These are the two choices the user can pick from.
 
 3. **State**:
+
    - The `useState` hook is used to create a state variable called `query`. This keeps track of the user's search preferences:
      - `type`: "buy" or "rent" (default is "buy").
      - `location`: The city or area the user is searching in.
      - `minPrice` and `maxPrice`: The price range the user is interested in.
 
 4. **Switch Type Function**:
+
    - The `switchtype` function updates the `type` in the `query` state when the user clicks either "buy" or "rent". It ensures the selected option is highlighted as "active".
 
 5. **Rendered JSX**:
+
    - The component renders a search bar with:
      - Two buttons for "buy" and "rent". Clicking a button updates the `type` in the `query`.
      - A form with:
@@ -95,11 +102,13 @@ This code is a simple React component for a search bar that helps users search f
    - The `className` for the buttons changes to "active" when a button is selected, so it can be styled differently (e.g., highlighted).
 
 In simple terms, this is a search bar where users can:
+
 - Choose between buying or renting.
 - Enter a location and price range.
 - Click a search button to find properties.
 
 # REACT ROUTER DOM
+
 react-router-dom is a library for handling navigation in React applications. It allows you to build single-page applications (SPAs) with multiple views without reloading the page.
 
 It is written in App.js
@@ -107,7 +116,6 @@ It is written in App.js
 create another router (page) listpage. we'll use react router to navigate to this page.
 
 inside App.js we want to make the website in that the navbar we'll be in every page. thefore the layout of the page is place in its directory, whereby it only have the <Navbar /> and the outlets(the other component) outlet is written there to symbolise there is a list of other components but the actual components are place inside the App.js as Children.
-
 
 for single item we'll be using there id; each item will it own id therefore in App.jsx this is how the path is written: path: "/:id",
 
@@ -126,17 +134,15 @@ Now on the right side we are implimenting the map; we'll be implimenting it by u
 Leaflet comes with its own css out of the box; import "leaflet/dist/leaflet.css";
 we'll use it to implement the map
 
-
 # SinglePage implimentation
 
 when you click on a item or pointer in the in the list page you should be directed to the single page of the said property
 
-the single page is divided into two sections; details  and the features
+the single page is divided into two sections; details and the features
 
 inside details section we have an image ( and it will be imported as it own component)
 
 when you click on the image a slider should open and fill the entire screen.
-
 
 ### implimenting the slider next and previous logic
 
@@ -145,7 +151,6 @@ the logic is that when you click on the left arrow you move to the prevous page 
 All the components are placed in the single page
 
 styling the singlepage to fit all the screen type
-
 
 # Profile Page
 
@@ -157,10 +162,33 @@ creating a list to show suspence when loading list of properties
 
 NOTE: for seamless scrolling of different part/components of the page? set the most parent element height to 100% then the component that you want to scroll(detail/left part of the page) set the height to 100vh and overflow-y to scroll
 
-
 onClicking the message the chat becomes visible; therefore we will use useState in that it is set to null and the chat disappers when true the chat appear.
 
+# Connecting the front-end to the back-end
+
+## Register
+
+for regitering will have a formData and from the for we get user credentials.
+
+handleSubmit funtion is responsible for taking the data and sending it to the api. this function must be async, we'll use the try catch incase of any error:
+
+      NOTE:    Your frontend (running on http://localhost:5173) is trying to make a POST request to your backend (running on http://localhost:8800). Since these are two different origins (ports 5173 and 8800 are considered different origins), the browser blocks the request unless the backend explicitly allows it.
+
+      Preflight Request:
+      For certain types of requests (like POST with JSON data), the browser first sends an OPTIONS request (called a preflight request) to check if the server allows the actual request. If the server doesn't respond to the preflight request with the correct CORS headers, the browser blocks the request.
+
+      therefore To resolve this issue, we need to configure your backend server to allow requests from your frontend origin (http://localhost:5173).
 
 
+      from the server the following code is written to allow cookies to be sent: app.use(cors({origin: "http://http://localhost:5173", credentials: true})) N/B the browser is very strict the address should not have the trailing slash
 
 
+when the user has successfully registered he is redirected to the log in page; this is by the use of useNavigate hook. from react router dom
+
+
+## Login
+
+
+we'll be using the try catch finally so that we can disable our submit button waiting for the server responce. the responce from the server, is the user credetils from the database.
+
+Now we will be storing this credentials to the localstorage of the browser

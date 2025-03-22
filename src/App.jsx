@@ -3,6 +3,8 @@ import Listpage from "./components/routes/listpage/listPage.jsx";
 import Singlepage from "./components/routes/singlepage/singlepage.jsx";
 import Layout from "./components/routes/layout/layout";
 import ProfilePage from "./components/routes/profilepage/profilePage.jsx";
+import Register from "./components/routes/register/register.jsx";
+import Login from "./components/routes/Loginpage/loginpage.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -27,6 +29,14 @@ function App() {
         {
           path: "/profile",
           element: <ProfilePage />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
         },
       ],
     },

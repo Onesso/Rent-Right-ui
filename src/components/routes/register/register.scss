@@ -1,6 +1,5 @@
 @use "./../../../responsive.scss";
-
-.login {
+.register {
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -9,8 +8,9 @@
     flex: 3;
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     form {
       display: flex;
@@ -22,7 +22,6 @@
         border: 1px solid gray;
         border-radius: 5px;
       }
-
       button {
         padding: 20px;
         border-radius: 5px;
@@ -37,11 +36,9 @@
           cursor: not-allowed;
         }
       }
-
       span {
         color: rgba(255, 0, 0, 0.591);
       }
-
       a {
         font-size: 14px;
         color: gray;
@@ -50,16 +47,16 @@
       }
     }
   }
+
   .imageContainer {
     flex: 2;
     background-color: #fcf5f3;
     position: relative;
-    display: flex;
     align-items: center;
 
     img {
-      width: 110%;
       position: absolute;
+      width: 110%;
       right: 0;
 
       @include responsive.md {
