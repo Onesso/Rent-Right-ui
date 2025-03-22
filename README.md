@@ -192,3 +192,11 @@ when the user has successfully registered he is redirected to the log in page; t
 we'll be using the try catch finally so that we can disable our submit button waiting for the server responce. the responce from the server, is the user credetils from the database.
 
 Now we will be storing this credentials to the localstorage of the browser
+
+## Logout
+
+onClicking the log out button we'll be clearing the localstorage and deleteing the cookie
+
+we are going to make a post request to the server to clear the cookie
+
+and also clear the localstorage

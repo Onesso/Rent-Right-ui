@@ -35,7 +35,9 @@ export default function Login() {
 
       //save the user information to the local storage
       localStorage.setItem("user", JSON.stringify(res.data));
-      
+
+      alert("You have been logged in successfully");
+
       navigate("/");
     } catch (error) {
       console.log("error: ", error);
