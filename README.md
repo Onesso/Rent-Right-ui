@@ -200,3 +200,16 @@ onClicking the log out button we'll be clearing the localstorage and deleteing t
 we are going to make a post request to the server to clear the cookie
 
 and also clear the localstorage
+
+
+# Using context;  (useContext/createContext)
+
+we are creating a context that will be getting the user information from the localstorage and providing it to different routes.
+
+in the AuthContext we are exporting two context namely; AuthContext and AuthContextProvider ; this names are case sensitive and they should be used as they are.
+
+To enable routes to be provided, we are wrapping the entire App with <AuthContextProvider>
+
+therefore inside main.js wrap the <App />
+
+At this point when we login we are directed to the homepage and when we reload the homepage we get the user informoation i.e. console.log(currentUser);

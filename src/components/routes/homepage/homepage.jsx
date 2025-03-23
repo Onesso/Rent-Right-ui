@@ -1,7 +1,12 @@
 import "./homepage.scss";
 import Searchbar from "../../searchbar/searchbar";
+import { AuthContext } from "../../../context/AuthContext.jsx"; //we build this context in the AuthContext file
+import { useContext } from "react";
 
 export default function Homepage() {
+  const { currentUser } = useContext(AuthContext);
+  console.log(currentUser);
+
   return (
     <div className="homepage">
       <div className="textcontainer">

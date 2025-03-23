@@ -4,6 +4,11 @@
   display: flex;
   height: 100%;
 
+  @include responsive.sm {
+    height: fit-content;
+    overflow-x: none;
+  }
+
   .textcontainer {
     flex: 3;
 
@@ -18,9 +23,7 @@
       @include responsive.md {
         padding-right: 50px;
         gap: 15px;
-
       }
-
 
       .title {
         font-size: 48px;
@@ -30,11 +33,9 @@
         }
 
         .description {
-
           @include responsive.md {
             font-size: 12px;
           }
-
         }
       }
 
@@ -66,11 +67,9 @@
       position: absolute;
       right: 0;
 
-      @include responsive.md{
+      @include responsive.md {
         width: 90%;
-
       }
-
     }
   }
 }
