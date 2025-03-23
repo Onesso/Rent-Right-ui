@@ -235,3 +235,14 @@ we are updating navbar so that it can dynamically allocate the username and prof
 on the profilePage is where we have the logout buttton, where by instead of deleteing the localstorage we are going to set the updateUser(AuthContext funtction) to null; throught this logic, the function will run in the AuthContxet and set to localStorage to a null.
 
 we are going to use the state (currentUser) from the AuthProvider to display the logged in userinformation in the profilePage
+
+
+# Building the Contact us page
+
+something intresting you can not give your className div as Map it will break the layout
+
+here is the dign https://i.pinimg.com/1200x/8d/e1/94/8de1942f8e0eed447eeb3e0de5698233.jpg
+
+i have suffered trying to make the page scrollable.
+
+from my style at this point; this is how to make a page scroll.

@@ -8,6 +8,7 @@ export default function Singlepage() {
   const data = listData;
   return (
     <div className="Singlepage">
+      
       <div className="details">
         <div className="wrapper">
           <Slider images={singlePostData.images} />

@@ -17,9 +17,9 @@ export default function Navbar() {
           <span>Rent-Right</span>
         </a>
         <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-       
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+
       </div>
 
       <div className="right">
@@ -52,8 +52,8 @@ export default function Navbar() {
 
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
 
           <a href="/">Sign in</a>
           <a href="/">Sign up</a>

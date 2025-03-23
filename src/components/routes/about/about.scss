@@ -1,0 +1,24 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+//   overflow-y: auto;
+  gap: 50px;
+
+  .top {
+    flex: 1 1 100px;
+    background-color: green;
+  }
+  .provideInfo {
+    flex: 2 2 200px;
+    background-color: orange;
+  }
+  .map {
+    flex: 2 2 200px;
+    background-color: purple;
+  }
+  .bottom {
+    flex: 1 1 100px;
+    background-color: indianred;
+  }
+}

@@ -1,0 +1,45 @@
+@use ".././../../responsive.scss";
+.contactContainer {
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: white;
+
+  // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  // Hide scrollbar for Firefox
+  scrollbar-width: none;
+
+  // Hide scrollbar for IE and Edge
+  -ms-overflow-style: none;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+
+    .top {
+      flex: 1;
+      min-height: 200px;
+      background-color: rgb(197, 176, 180);
+    }
+    .middle {
+      flex: 3;
+      min-height: 400px;
+      background-color: rgb(165, 108, 119);
+    }
+    .mapview{
+        flex: 3;
+        min-height: 400px;
+        background-color: rgb(186, 55, 81);
+    }
+    .bottom {
+      flex: 1;
+      min-height: 200px;
+      background-color: rgb(94, 84, 86);
+    }
+  }
+}
