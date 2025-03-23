@@ -246,3 +246,17 @@ here is the dign https://i.pinimg.com/1200x/8d/e1/94/8de1942f8e0eed447eeb3e0de56
 i have suffered trying to make the page scrollable.
 
 from my style at this point; this is how to make a page scroll.
+
+
+### How to embedded a google map to a react application
+
+Get the emmbedded iframe and paste it inside the appropriate div.
+
+after pasting delete the  style="border:0;"
+
+type the "referrerpolicy" in camelCase: referrerPolicy
+
+the add: title="Responsive Google Map"
+
+allowfullscreen to camele case: allowFullScreen
+

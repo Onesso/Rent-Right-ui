@@ -23,23 +23,343 @@
 
     .top {
       flex: 1;
-      min-height: 200px;
-      background-color: rgb(197, 176, 180);
+      min-height: 150px;
+      background-color: rgb(255, 249, 249);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      margin-bottom: 30px;
+
+      h1 {
+        font-weight: 500;
+      }
     }
     .middle {
       flex: 3;
       min-height: 400px;
-      background-color: rgb(165, 108, 119);
-    }
-    .mapview{
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-bottom: 30px;
+
+      .left {
         flex: 3;
-        min-height: 400px;
-        background-color: rgb(186, 55, 81);
+
+        h1 {
+          font-weight: 500;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        span {
+          width: fit-content;
+          font-size: 13px;
+        }
+
+        .inputPartition {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          gap: 20px;
+
+          .inputleft {
+            flex: 1;
+            .labelandinput {
+              display: flex;
+              flex-direction: column;
+
+              label {
+                font-weight: 700;
+                font-size: 13px;
+                padding: 10px 0px;
+              }
+              input {
+                width: calc(100%);
+                height: 30px;
+                border: 1px solid rgb(47, 77, 77);
+                border-radius: 5px;
+                border-width: 1px;
+                padding: 0px 5px;
+              }
+            }
+          }
+
+          .inputRight {
+            flex: 1;
+            .labelandinput {
+              display: flex;
+              flex-direction: column;
+
+              label {
+                font-weight: 700;
+                font-size: 13px;
+                padding: 10px 0px;
+              }
+              input {
+                width: calc(100%);
+                height: 30px;
+                border: 1px solid rgb(47, 77, 77);
+                border-radius: 5px;
+                border-width: 1px;
+                padding: 0px 5px;
+              }
+            }
+          }
+        }
+
+        .textinput {
+          margin-top: 20px;
+          .labelandinput {
+            display: flex;
+            flex-direction: column;
+
+            label {
+              font-weight: 700;
+              font-size: 13px;
+              padding: 10px 0px;
+            }
+
+            textarea {
+              width: 490px; // Fixed width
+              height: 150px; // Fixed height
+              padding: 10px; // Add padding
+              font-size: 16px; // Set font size
+              border: 1px solid #ccc; // Add a border
+              border-radius: 9px; // Optional: Add rounded corners
+              resize: none; // Disable resizing
+
+              &:focus {
+                outline: none; // Remove default focus outline
+                border-color: #002042; // Change border color on focus
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); // Add a focus effect
+              }
+            }
+          }
+        }
+
+        .buttondiv {
+          margin-top: 10px;
+          button {
+            padding: 10px 20px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgb(255, 74, 74);
+            }
+
+            &:active {
+              scale: 1.05;
+              transition: 0.2s;
+            }
+          }
+        }
+      }
+
+      .right {
+        flex: 2;
+        padding: 15px;
+        background-color: rgb(255, 249, 249);
+        height: 400px;
+        h1 {
+          font-weight: 500;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        .contactInfo {
+          padding: 20px;
+          label {
+            font-weight: 700;
+            font-size: 15px;
+            padding: 10px 0px;
+            margin-bottom: 3px;
+          }
+          p {
+            font-weight: 500;
+            font-size: 13px;
+            color: gray;
+          }
+        }
+        .SocialMedialinks {
+          padding: 0px 20px;
+          label {
+            font-weight: 700;
+            font-size: 15px;
+            padding: 10px 0px;
+            margin-bottom: 3px;
+          }
+
+          .sociallinks {
+            display: flex;
+            flex-direction: row;
+            gap: 35px;
+            align-items: center;
+            img {
+              height: 24px;
+              width: 24px;
+              background-color: white;
+              margin: 10px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .mapview {
+      flex: 3;
+      min-height: 500px;
+      background-color: rgb(255, 255, 255);
+
+      .map-responsive {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+      .map-responsive iframe {
+        left: 0;
+        top: 0;
+        border: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
     }
     .bottom {
       flex: 1;
-      min-height: 200px;
-      background-color: rgb(94, 84, 86);
+      min-height: 300px;
+      background-color: rgba(254, 245, 245, 0.826);
+      margin-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+
+      .up {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .custom-hr {
+          border: 1px straight black;
+          width: 80%;
+          margin: 15px auto;
+        }
+      }
+      .intermediate {
+        flex: 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+
+        .leftt {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+
+          p{
+            width: calc(80%);
+            font-weight: 500;
+            color: rgba(99, 97, 97, 0.765);
+          }
+          span{
+            padding: 5px 0px;
+            font-weight: bold;
+          }
+        }
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          .Categories {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              font-size: 16px;
+              font-weight: bold;
+            }
+            span{
+                padding-top: 7px;
+                font-size: 13px;
+                color: rgb(86, 86, 86);
+                cursor: pointer;
+            }
+          }
+
+          .ourCompany {
+            display: flex;
+            flex-direction: column;
+            h2 {
+              font-size: 16px;
+              font-weight: bold;
+
+            }
+            span{
+                padding-top: 7px;
+                font-size: 13px;
+                color: rgb(86, 86, 86);
+                cursor: pointer;
+            }
+          }
+        }
+        .rightt {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          span {
+            flex: 1;
+            font-weight: bold;
+          }
+          p {
+            flex: 2;
+            font-weight: 300;
+            color: gray;
+            width: calc(60%);
+          }
+
+          input {
+            flex: 1;
+            width: calc(100%);
+            height: 20px;
+            border: 1px solid rgb(47, 77, 77);
+            border-radius: 5px;
+            border-width: 1px;
+            padding: 0px 5px;
+
+            &:focus {
+              outline: none; // Remove default focus outline
+              border-color: #002042; // Change border color on focus
+              box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); // Add a focus effect
+            }
+          }
+        }
+      }
+      .low {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .custom-hr {
+          border: 1px straight black;
+          width: 80%;
+          margin: 15px auto;
+        }
+      }
     }
   }
 }
