@@ -224,3 +224,8 @@ we want we the user logs in and redirected to the homepage all the required data
 
 previously we were handling the saving of user information to localstorage in the loginpage but now we want to handle it in the AuthContext and later the AuthContext will provide the saved user information to the entire application.
 Therefore we are creating a updateUser function in the AuthContext. this function is responsible for saving the user information. Therefore From the AuthContext we are goin to provide this function to the login page and use it to get the user information from the from the res.data and save it to the localstorage
+
+
+# Updating the navbar
+
+we are updating navbar so that it can dynamically allocate the username and profile when the user logs in. By the use of AuthContext which will provide the the user information.
