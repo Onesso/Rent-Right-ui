@@ -213,3 +213,14 @@ To enable routes to be provided, we are wrapping the entire App with <AuthContex
 therefore inside main.js wrap the <App />
 
 At this point when we login we are directed to the homepage and when we reload the homepage we get the user informoation i.e. console.log(currentUser);
+
+BUT
+
+But the user should not have to refresh the page so that it can be updated; remember we want the user information so that we can prefill the homepages' avartar and username at the top right coner
+
+Therefore
+
+we want we the user logs in and redirected to the homepage all the required data should be already availble;
+
+previously we were handling the saving of user information to localstorage in the loginpage but now we want to handle it in the AuthContext and later the AuthContext will provide the saved user information to the entire application.
+Therefore we are creating a updateUser function in the AuthContext. this function is responsible for saving the user information. Therefore From the AuthContext we are goin to provide this function to the login page and use it to get the user information from the from the res.data and save it to the localstorage

@@ -1,14 +1,16 @@
 import React from "react";
 import "./login.scss";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiRequest from "../../../lib/apiRequest";
+import { AuthContext } from "../../../context/AuthContext";
+import { useContext } from "react";
 
 export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // const { updateUser } = useContext(AuthContext);
+  const { updateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -34,7 +36,7 @@ export default function Login() {
       console.log("Response from the server: ", res.data); //we are getting the username to be used in the profile page
 
       //save the user information to the local storage
-      localStorage.setItem("user", JSON.stringify(res.data));
+      updateUser(res.data);
 
       alert("You have been logged in successfully");
 
