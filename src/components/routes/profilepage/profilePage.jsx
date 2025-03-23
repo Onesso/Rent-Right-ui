@@ -3,20 +3,29 @@ import List from "../../list/list";
 import Chat from "../../chat/chat";
 import apiRequest from "../../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 export default function ProfilePage() {
+  const { currentUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const handlelogout = async () => {
-    try {
-      const res = await apiRequest.post("/auth/logout");
+    const confirmLogout = window.confirm("Are you sure you want to logout?");
 
-      localStorage.removeItem("user");
-      console.log(res);
-      alert("You have been logged out successfully.");
+    if (confirmLogout) {
+      try {
+        const res = await apiRequest.post("/auth/logout"); //logout api this deletes the token from the database and on the client too.
 
-      navigate("/");
-    } catch (error) {
-      console.log(error);
+        updateUser(null); //logout mechanism. It deletes the user from the local storage
+        console.log(res);
+
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log("Logout canceled.");
     }
   };
   return (
@@ -32,15 +41,15 @@ export default function ProfilePage() {
             <span>
               Profile Image:
               <img
-                src="https://i.pinimg.com/474x/ea/c4/6d/eac46d291f121d4d27e6017920f71d2d.jpg"
+                src={currentUser.userInfo.avatar || "/noavatar.png"}
                 alt=""
               />
             </span>
             <span>
-              Username:<b> Frank Onesso</b>
+              Username:<b> {currentUser.userInfo.username}</b>
             </span>
             <span>
-              E-mail:<b> odhiambofrank1965@gmail.com</b>
+              E-mail:<b> {currentUser.userInfo.email}</b>
             </span>
             <button onClick={handlelogout} className="logoutbtn">
               Logout

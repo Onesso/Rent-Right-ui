@@ -229,3 +229,9 @@ Therefore we are creating a updateUser function in the AuthContext. this functio
 # Updating the navbar
 
 we are updating navbar so that it can dynamically allocate the username and profile when the user logs in. By the use of AuthContext which will provide the the user information.
+
+
+# updating the profilepage
+on the profilePage is where we have the logout buttton, where by instead of deleteing the localstorage we are going to set the updateUser(AuthContext funtction) to null; throught this logic, the function will run in the AuthContxet and set to localStorage to a null.
+
+we are going to use the state (currentUser) from the AuthProvider to display the logged in userinformation in the profilePage
