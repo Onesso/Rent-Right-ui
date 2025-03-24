@@ -257,6 +257,14 @@ NOTE: in the Layout code we'll be exporting two funtion Layout hence it wont be 
 
 After creating the new RequiredAuth layout we will import it to the App.js where it will be rendered.
 
+
+
+
+
+# profileUpdatePage
+
+
+
 # STATIC {ABOUT US AND CONTACT PAGE}
 
 ## Building the Contact us page
