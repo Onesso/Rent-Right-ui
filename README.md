@@ -249,6 +249,14 @@ the rendering of the profile page is also conditional where we saw: currentUser 
 
 So this logic is written where we have received the currentUser from AuthContext. THE PROFILEPAGE!!!
 
+### Alternatively
+
+We can protect our routes by the use of our layout, the layout works by rendering two divs one Rendering the <navBar/> and two the <outlet /> which is the rest of the pages. Now we are creating another Layout named: RequiredAuth where we will provide the AuthContext (currentUser) which is used conditionally to only render pages that require authentification.
+
+NOTE: in the Layout code we'll be exporting two funtion Layout hence it wont be default.
+
+After creating the new RequiredAuth layout we will import it to the App.js where it will be rendered.
+
 # STATIC {ABOUT US AND CONTACT PAGE}
 
 ## Building the Contact us page

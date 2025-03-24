@@ -1,7 +1,7 @@
 import Homepage from "./components/routes/homepage/homepage.jsx";
 import Listpage from "./components/routes/listpage/listPage.jsx";
 import Singlepage from "./components/routes/singlepage/singlepage.jsx";
-import Layout from "./components/routes/layout/layout";
+import { Layout, RequireAuth } from "./components/routes/layout/layout";
 import ProfilePage from "./components/routes/profilepage/profilePage.jsx";
 import Register from "./components/routes/register/register.jsx";
 import Login from "./components/routes/Loginpage/loginpage.jsx";
@@ -29,10 +29,6 @@ function App() {
           element: <Singlepage />,
         },
         {
-          path: "/profile",
-          element: <ProfilePage />,
-        },
-        {
           path: "/register",
           element: <Register />,
         },
@@ -47,6 +43,16 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+      ],
+    },
+    {
+      path: "/",
+      element: <RequireAuth />,
+      children: [
+        {
+          path: "/profile",
+          element: <ProfilePage />,
         },
       ],
     },
