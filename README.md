@@ -182,12 +182,9 @@ handleSubmit funtion is responsible for taking the data and sending it to the ap
 
       from the server the following code is written to allow cookies to be sent: app.use(cors({origin: "http://http://localhost:5173", credentials: true})) N/B the browser is very strict the address should not have the trailing slash
 
-
 when the user has successfully registered he is redirected to the log in page; this is by the use of useNavigate hook. from react router dom
 
-
 ## Login
-
 
 we'll be using the try catch finally so that we can disable our submit button waiting for the server responce. the responce from the server, is the user credetils from the database.
 
@@ -201,8 +198,7 @@ we are going to make a post request to the server to clear the cookie
 
 and also clear the localstorage
 
-
-# Using context;  (useContext/createContext)
+# Using context; (useContext/createContext)
 
 we are creating a context that will be getting the user information from the localstorage and providing it to different routes.
 
@@ -225,19 +221,37 @@ we want we the user logs in and redirected to the homepage all the required data
 previously we were handling the saving of user information to localstorage in the loginpage but now we want to handle it in the AuthContext and later the AuthContext will provide the saved user information to the entire application.
 Therefore we are creating a updateUser function in the AuthContext. this function is responsible for saving the user information. Therefore From the AuthContext we are goin to provide this function to the login page and use it to get the user information from the from the res.data and save it to the localstorage
 
-
 # Updating the navbar
 
 we are updating navbar so that it can dynamically allocate the username and profile when the user logs in. By the use of AuthContext which will provide the the user information.
 
-
 # updating the profilepage
+
 on the profilePage is where we have the logout buttton, where by instead of deleteing the localstorage we are going to set the updateUser(AuthContext funtction) to null; throught this logic, the function will run in the AuthContxet and set to localStorage to a null.
 
 we are going to use the state (currentUser) from the AuthProvider to display the logged in userinformation in the profilePage
 
+### What happens when are logged out and try to access the profile url; keep in mind that the profilepage dependends of the {currentUser Authcontext} which is only available after authentification?
 
-# Building the Contact us page
+at the current stage of the profilePage you'll receive an error: Cannot read properties of null (reading 'avatar')
+
+Therefore how can we protect our routes? users not logged in should not access the Profile route.
+
+### Protected routes with React Router Dom
+
+Solution of the problem is to check if you are authenticated you can access the profilePage and if you are not authenticated you are redirected to the loginPage for authentification.
+
+to achieve this we must use eseEffect hook, why, this is because useEffect runs on a dependencies, and in this case is the currentUser.
+
+the currentUser is place on the dependencies array, and we are performing a function to check if we have a value in the currentUser, if we have a value (user information) we are redirected to the profilePage and if not we are redirected to the loginPage.
+
+the rendering of the profile page is also conditional where we saw: currentUser && (<div> <profilepage> </div>)
+
+So this logic is written where we have received the currentUser from AuthContext. THE PROFILEPAGE!!!
+
+# STATIC {ABOUT US AND CONTACT PAGE}
+
+## Building the Contact us page
 
 something intresting you can not give your className div as Map it will break the layout
 
@@ -247,16 +261,14 @@ i have suffered trying to make the page scrollable.
 
 from my style at this point; this is how to make a page scroll.
 
-
 ### How to embedded a google map to a react application
 
 Get the emmbedded iframe and paste it inside the appropriate div.
 
-after pasting delete the  style="border:0;"
+after pasting delete the style="border:0;"
 
 type the "referrerpolicy" in camelCase: referrerPolicy
 
 the add: title="Responsive Google Map"
 
 allowfullscreen to camele case: allowFullScreen
-
