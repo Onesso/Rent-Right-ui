@@ -8,7 +8,7 @@ import { AuthContext } from "../../../context/AuthContext";
 
 function ProfileUpdatePage() {
   const { currentUser, updateUser } = useContext(AuthContext);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); //save error from the database
   const [avatar, setAvatar] = useState([]);
 
   const navigate = useNavigate();
@@ -17,15 +17,24 @@ function ProfileUpdatePage() {
     e.preventDefault();
     const formData = new FormData(e.target);
 
+
+
     const { username, email, password } = Object.fromEntries(formData);
 
+    console.log(username, email, password)
+
+
     try {
-      const res = await apiRequest.put(`/users/${currentUser.id}`, {
+
+      console.log(currentUser.id)
+      const res = await apiRequest.put(`user/${currentUser.id}`, {
         username,
         email,
         password,
-        avatar: avatar[0],
+        // avatar: avatar[0],
       });
+
+      console.log(res.data)
       updateUser(res.data);
       navigate("/profile");
     } catch (err) {
@@ -45,7 +54,7 @@ function ProfileUpdatePage() {
               id="username"
               name="username"
               type="text"
-              defaultValue={currentUser.userInfo.username}
+              defaultValue={currentUser?.username}
             />
           </div>
           <div className="item">
@@ -54,7 +63,7 @@ function ProfileUpdatePage() {
               id="email"
               name="email"
               type="email"
-              defaultValue={currentUser.userInfo.email}
+              defaultValue={currentUser?.email}
             />
           </div>
           <div className="item">
@@ -67,7 +76,7 @@ function ProfileUpdatePage() {
       </div>
       <div className="sideContainer">
         <img
-          src={avatar[0] || currentUser.userInfo.avatar ||  "/noavatar.png"}
+          src={avatar[0] || currentUser?.avatar ||  "/noavatar.png"}
           alt=""
           className="avatar"
         />

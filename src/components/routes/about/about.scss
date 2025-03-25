@@ -1,24 +1,148 @@
 .about {
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  height: 100%;
-//   overflow-y: auto;
-  gap: 50px;
+
+  // Hide scrollbar for WebKit browsers (Chrome, Safari, Edge)
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  // Hide scrollbar for Firefox
+  scrollbar-width: none;
+
+  // Hide scrollbar for IE and Edge
+  -ms-overflow-style: none;
 
   .top {
-    flex: 1 1 100px;
-    background-color: green;
+    flex: 1;
+    min-height: 500px;
+    position: relative;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+      height: 100%; // This will make the image take full height of .top
+      object-fit: cover; // This prevents distortion
+    }
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+
+      h1 {
+        font-weight: calc(bolder * 2);
+        font-size: 50px;
+      }
+      p {
+        width: 60%;
+        margin: 0 auto; // Center the paragraph
+        padding: 0.5rem 0; // Vertical spacing
+        line-height: 1.2;
+        // Inverted pyramid effect (each line shorter than the previous)
+        display: inline-block; // Allows max-width to work per line
+        text-align: center; // Center-align text inside the paragraph
+      }
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgb(238, 255, 0);
+
+      &:hover {
+        scale: 1.05;
+        transition: 0.3s;
+      }
+
+      &:active {
+        scale: 1.05;
+        transition: 0.3s;
+        color: rgb(0, 142, 142);
+      }
+    }
   }
-  .provideInfo {
-    flex: 2 2 200px;
-    background-color: orange;
-  }
-  .map {
-    flex: 2 2 200px;
-    background-color: purple;
-  }
+
   .bottom {
-    flex: 1 1 100px;
-    background-color: indianred;
+    flex: 1;
+    min-height: 450px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 200px;
+
+    .left {
+      flex: 3;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .wrappe {
+        padding: 50px;
+
+        .textsection {
+          flex: 1;
+          padding: 50px 0px;
+          h1 {
+            font-weight: bolder;
+          }
+        }
+        .imgsection {
+          flex: 3;
+          width: 100%;
+          // min-height: 200px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .right {
+      flex: 2;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .wrapperight {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+
+        .controlheight {
+          flex: 1;
+          min-height: 100px;
+        }
+        .topText {
+          flex: 1;
+          h2{
+            color: rgb(132, 126, 126);
+          }
+        }
+        .bottomText {
+          flex: 1;
+          min-height: 150px;
+          margin-top: 50px;
+          display: flex;
+          align-items: end;
+          p{
+            font-size: 13px;
+            color: gray;
+          }
+        }
+      }
+    }
   }
 }

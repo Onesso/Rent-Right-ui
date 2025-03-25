@@ -264,6 +264,51 @@ After creating the new RequiredAuth layout we will import it to the App.js where
 # profileUpdatePage
 
 
+you can have a banch of inputs and wrapp them with a form. This makes the work easier by geeting all the data at once.
+
+the inputs must have names so that you can specify them to extract the data and store in a variable i.e. formdata
+
+i.e.
+
+const formData = new FormData(e.target);
+
+const { username, email, password } = Object.fromEntries(formData);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # STATIC {ABOUT US AND CONTACT PAGE}
 

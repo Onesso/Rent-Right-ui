@@ -19,7 +19,6 @@ export default function Navbar() {
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
-
       </div>
 
       <div className="right">
@@ -27,10 +26,10 @@ export default function Navbar() {
           <>
             <div className="user">
               <img
-                src={currentUser.userInfo.avatar || "/noavatar.png"}
+                src={currentUser?.avatar || "/noavatar.png"}
                 alt=""
               />
-              <span>{currentUser.userInfo.username}</span>
+              <span>{currentUser?.username}</span>
               <Link to="/profile" className="profile">
                 <div className="notification">3</div>
                 <span>Profile</span>

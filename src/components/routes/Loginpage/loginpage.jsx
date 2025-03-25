@@ -38,7 +38,7 @@ export default function Login() {
       //save the user information to the local storage
       updateUser(res.data);
 
-      alert("You have been logged in successfully");
+    
 
       navigate("/");
     } catch (error) {

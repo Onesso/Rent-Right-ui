@@ -16,7 +16,7 @@ export default function ProfilePage() {
 
     if (confirmLogout) {
       try {
-        const res = await apiRequest.post("/auth/logout"); //logout api this deletes the token from the database and on the client too.
+        const res = await apiRequest.post("auth/logout"); //logout api this deletes the token from the database and on the client too.
 
         updateUser(null); //logout mechanism. It deletes the user from the local storage
         console.log(res);
@@ -44,15 +44,15 @@ export default function ProfilePage() {
             <span>
               Profile Image:
               <img
-                src={currentUser.userInfo.avatar || "/noavatar.png"}
+                src={currentUser?.avatar || "/noavatar.png"}
                 alt=""
               />
             </span>
             <span>
-              Username:<b> {currentUser.userInfo.username}</b>
+              Username:<b> {currentUser?.username}</b>
             </span>
             <span>
-              E-mail:<b> {currentUser.userInfo.email}</b>
+              E-mail:<b> {currentUser?.email}</b>
             </span>
             <button onClick={handlelogout} className="logoutbtn">
               Logout
