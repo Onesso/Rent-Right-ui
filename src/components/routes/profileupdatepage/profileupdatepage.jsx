@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import UploadWidget from "../../uploadwidget/uploadWidget";
 import { AuthContext } from "../../../context/AuthContext";
 
-
 function ProfileUpdatePage() {
   const { currentUser, updateUser } = useContext(AuthContext);
+  const [avatar, setAvatar] = useState(
+    currentUser.avatar ? [currentUser.avatar] : []
+  );
   const [error, setError] = useState(""); //save error from the database
-  const [avatar, setAvatar] = useState([]);
 
   const navigate = useNavigate();
 
@@ -17,24 +18,20 @@ function ProfileUpdatePage() {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-
-
     const { username, email, password } = Object.fromEntries(formData);
 
-    console.log(username, email, password)
-
+    console.log(username, email, password);
 
     try {
-
-      console.log(currentUser.id)
+      console.log(currentUser.id);
       const res = await apiRequest.put(`user/${currentUser.id}`, {
         username,
         email,
         password,
-        // avatar: avatar[0],
+        avatar: avatar[0],
       });
 
-      console.log(res.data)
+      console.log(res.data);
       updateUser(res.data);
       navigate("/profile");
     } catch (err) {
@@ -76,14 +73,28 @@ function ProfileUpdatePage() {
       </div>
       <div className="sideContainer">
         <img
-          src={avatar[0] || currentUser?.avatar ||  "/noavatar.png"}
+          src={
+            avatar && avatar.length > 0
+              ? avatar[0]
+              : currentUser?.avatar || "/noavatar.png"
+          }
           alt=""
           className="avatar"
         />
+        {/* <UploadWidget
+          uwConfig={{
+            cloudName: "dxxdvid9d",       //this value is gotten from cloudinary account
+            uploadPreset: "rent-right",   //this value is gotten from cloudinary account
+            multiple: false,
+            maxImageFileSize: 2000000, //2mb
+            folder: "avatars",
+          }}
+          setState={setAvatar}
+        /> */}
         <UploadWidget
           uwConfig={{
-            cloudName: "lamadev",
-            uploadPreset: "estate",
+            cloudName: "dxxdvid9d",
+            uploadPreset: "rent-right",
             multiple: false,
             maxImageFileSize: 2000000,
             folder: "avatars",

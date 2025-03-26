@@ -8,6 +8,7 @@ import Login from "./components/routes/Loginpage/loginpage.jsx";
 import About from "./components/routes/about/about.jsx";
 import Contact from "./components/routes/contact/contact.jsx";
 import Profileupdatepage from "./components/routes/profileupdatepage/profileupdatepage.jsx";
+import NewPostPage from "./components/routes/newPostPage/newPostPage.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -58,6 +59,10 @@ function App() {
         {
           path: "/profile/update",
           element: <Profileupdatepage />,
+        },
+        {
+          path: "/add",
+          element: <NewPostPage />,
         },
       ],
     },
