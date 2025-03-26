@@ -49,7 +49,7 @@ function NewPostPage() {
           restaurant: parseInt(inputs.restaurant),
         },
       });
-      navigate("/" + res.data.id);
+      navigate("/" + res.data.id); //this means we are navigating to that specific post id
     } catch (error) {
       console.log(error);
       setError(error);

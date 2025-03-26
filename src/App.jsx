@@ -9,6 +9,7 @@ import About from "./components/routes/about/about.jsx";
 import Contact from "./components/routes/contact/contact.jsx";
 import Profileupdatepage from "./components/routes/profileupdatepage/profileupdatepage.jsx";
 import NewPostPage from "./components/routes/newPostPage/newPostPage.jsx";
+import { singlePageLoader } from "./lib/loaders.js";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -29,6 +30,7 @@ function App() {
         {
           path: "/:id",
           element: <Singlepage />,
+          loader: singlePageLoader,
         },
         {
           path: "/register",

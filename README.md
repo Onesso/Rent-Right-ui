@@ -275,6 +275,17 @@ const formData = new FormData(e.target);
 const { username, email, password } = Object.fromEntries(formData);
 
 
+# SinglePage
+
+here we are updating to get the data from the server and using loader;
+import { useLoaderData } from "react-router-dom";
+
+on the create newpost page we are using react quill to get the description; but the problem is that is comes with the html tags.
+
+So we should filter to get the tags and the actually description
+
+npm install dompurify   =>  DOMPurify sanitizes HTML and prevents XSS attacks.
+
 
 
 

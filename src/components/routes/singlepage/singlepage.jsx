@@ -3,36 +3,46 @@ import Slider from "../../slider/slider";
 import { singlePostData } from "../../../lib/dummydata";
 import { userData } from "../../../lib/dummydata";
 import listData from "../../../lib/dummydata";
+import { useLoaderData } from "react-router-dom";
+import DOMPurify from "dompurify";
 
 export default function Singlepage() {
   const data = listData;
+
+  const post = useLoaderData();
+  console.log(post);
+
   return (
     <div className="Singlepage">
-      
       <div className="details">
         <div className="wrapper">
-          <Slider images={singlePostData.images} />
+          <Slider images={post.images} />
 
           <div className="info">
             <div className="top">
               <div className="post">
-                <h1>{singlePostData.title}</h1>
+                <h1>{post.title}</h1>
 
                 <div className="address">
                   <img src="/pin.png" alt="" />
-                  <span>{singlePostData.address}</span>
+                  <span>{post.address}</span>
                 </div>
 
-                <div className="price">KSH {singlePostData.price}</div>
+                <div className="price">KSH {post.price}</div>
               </div>
 
               <div className="user">
-                <img src={userData.img} alt="image" />
-                <span>{userData.name}</span>
+                <img src={post.user.avatar} alt="image" />
+                <span>{post.user.username}</span>
               </div>
             </div>
 
-            <div className="bottom">{singlePostData.description}</div>
+            <div
+              className="bottom"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(post.postDetail.desc),
+              }}
+            ></div>
           </div>
         </div>
       </div>
@@ -45,21 +55,29 @@ export default function Singlepage() {
               <img src="utility.png" alt="" />
               <div className="featurText">
                 <span>unitlities</span>
-                <p>Landlord is responisble</p>
+                {post.postDetail.utilities === "owner" ? (
+                  <p>Landlord is responisble</p>
+                ) : (
+                  <p>Tenant is responsible</p>
+                )}
               </div>
             </div>
             <div className="feature">
               <img src="pet.png" alt="" />
               <div className="featurText">
                 <span>Pet Policy</span>
-                <p>Pet Allowed</p>
+                {post.postDetail.pet === "allowed" ? (
+                  <p>Pet Allowed</p>
+                ) : (
+                  <p>Pet Allowed</p>
+                )}
               </div>
             </div>
             <div className="feature">
               <img src="fee.png" alt="" />
               <div className="featurText">
                 <span>Property Fee</span>
-                <p>Deposit equivalent to rent</p>
+                <p> {post.postDetail.income}</p>
               </div>
             </div>
           </div>
@@ -67,15 +85,15 @@ export default function Singlepage() {
           <div className="Size">
             <div className="sizes">
               <img src="/size.png" alt="" />
-              <span>80sqft</span>
+              <span>{post.postDetail.size} m²</span>
             </div>
             <div className="sizes">
               <img src="/bed.png" alt="" />
-              <span>2 bedroom</span>
+              <span>{post.bedroom} bedroom</span>
             </div>
             <div className="sizes">
               <img src="/bath.png" alt="" />
-              <span>1 bathroom</span>
+              <span>{post.bathroom} bathroom</span>
             </div>
           </div>
 
@@ -85,7 +103,12 @@ export default function Singlepage() {
               <img src="/school.png" alt="" />
               <div className="featurText">
                 <span>School</span>
-                <p>250m away</p>
+                <p>
+                  {post.postDetail.school > 999
+                    ? post.postDetail.school / 1000 + "km "
+                    : post.postDetail.school + "m "}
+                  away
+                </p>
               </div>
             </div>
 
@@ -93,7 +116,12 @@ export default function Singlepage() {
               <img src="fee.png" alt="" />
               <div className="featurText">
                 <span>Bus Stop</span>
-                <p>100m away</p>
+                <p>
+                  {post.postDetail.bus > 999
+                    ? post.postDetail.bus / 1000 + "km "
+                    : post.postDetail.bus + "m "}
+                  away
+                </p>
               </div>
             </div>
 
@@ -101,7 +129,12 @@ export default function Singlepage() {
               <img src="fee.png" alt="" />
               <div className="featurText">
                 <span>Restaurant</span>
-                <p>200m away</p>
+                <p>
+                  {post.postDetail.restaurant > 999
+                    ? post.postDetail.restaurant / 1000 + "km "
+                    : post.postDetail.restaurant + "m "}
+                  away
+                </p>
               </div>
             </div>
           </div>
