@@ -1,27 +1,28 @@
-import listData from "../../../lib/dummydata";
+// import listData from "../../../lib/dummydata";
 import "./listPage.scss";
 import Filter from "../../filter/filter";
 import Card from "../../card/card";
 import Map from "../../map/map";
+import { useLoaderData } from "react-router-dom";
 
 export default function Listpage() {
-  const data = listData;
+  // const data = listData;
+  const posts = useLoaderData();
+  console.log(posts);
   return (
     <div className="listpage">
-
       <div className="listContainer">
         <div className="wrapper">
-            
           <Filter />
 
-          {data.map((item) => (
+          {posts.map((item) => (
             <Card key={item.id} item={item} />
           ))}
         </div>
       </div>
 
       <div className="mapContainer">
-        <Map items={data}/>
+        <Map items={posts} />
       </div>
     </div>
   );

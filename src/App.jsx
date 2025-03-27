@@ -9,7 +9,11 @@ import About from "./components/routes/about/about.jsx";
 import Contact from "./components/routes/contact/contact.jsx";
 import Profileupdatepage from "./components/routes/profileupdatepage/profileupdatepage.jsx";
 import NewPostPage from "./components/routes/newPostPage/newPostPage.jsx";
-import { singlePageLoader } from "./lib/loaders.js";
+import {
+  singlePageLoader,
+  listPageLoader,
+  profilePageLoader,
+} from "./lib/loaders.js";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -26,6 +30,7 @@ function App() {
         {
           path: "/list",
           element: <Listpage />,
+          loader: listPageLoader,
         },
         {
           path: "/:id",
@@ -57,6 +62,7 @@ function App() {
         {
           path: "/profile",
           element: <ProfilePage />,
+          loader: profilePageLoader,
         },
         {
           path: "/profile/update",

@@ -286,6 +286,8 @@ So we should filter to get the tags and the actually description
 
 npm install dompurify   =>  DOMPurify sanitizes HTML and prevents XSS attacks.
 
+# loader to for the homepage 
+
 
 
 

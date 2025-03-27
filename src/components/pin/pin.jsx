@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import "./pin.scss"
 
 export default function Pin({ item }) {
+  console.log(item)
   return (
     <Marker position={[item.latitude, item.longitude]}>
       <Popup>
         <div className="popupcontainer">
 
-          <img src={item.images} alt="" />
+          <img src={item.images[0]} alt="" />
 
           <div className="textcontainer">
             <Link to={`/${item.id}`}>{item.title}</Link>

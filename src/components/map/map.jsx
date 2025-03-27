@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Pin from "../pin/pin";
 
 export default function Map({ items }) {
+  console.log(items)
   //   const position = [51.505, -0.09];
   // latitude: -1.2167,
   // longitude: 36.8167,

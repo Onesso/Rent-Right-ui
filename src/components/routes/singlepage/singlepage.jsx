@@ -1,16 +1,43 @@
 import "./singlepage.scss";
 import Slider from "../../slider/slider";
-import { singlePostData } from "../../../lib/dummydata";
-import { userData } from "../../../lib/dummydata";
-import listData from "../../../lib/dummydata";
 import { useLoaderData } from "react-router-dom";
 import DOMPurify from "dompurify";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import apiRequest from "../../../lib/apiRequest";
 
 export default function Singlepage() {
-  const data = listData;
-
   const post = useLoaderData();
   console.log(post);
+
+  const [saved, setSaved] = useState(post.isSaved);
+  console.log(saved);
+
+  const { currentUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleSave = async () => {
+    if (!currentUser) {
+      navigate("/login");
+      return;
+    }
+
+    //AFTER REACT 19 UPDATE TO OPTIMISTIC HOOK
+    setSaved((prev) => {
+      const newValue = !prev;
+      console.log("This is what we want to save: ", newValue); // Log here
+      return newValue;
+    });
+    try {
+      const res = await apiRequest.post("user/save", { postId: post.id });
+      console.log("responce from saving: ", res);
+    } catch (error) {
+      console.log(error);
+      setSaved((prev) => !prev); // Rollback on error
+    }
+  };
 
   return (
     <div className="Singlepage">
@@ -145,9 +172,14 @@ export default function Singlepage() {
               <img src="./chat.png" alt="" />
               <span>send a message</span>
             </button>
-            <button>
+            <button
+              onClick={handleSave}
+              style={{
+                backgroundColor: saved ? "#fece51" : "white",
+              }}
+            >
               <img src="./save.png" alt="" />
-              <span>Save property</span>
+              {saved ? <span>property saved</span> : <span>Save property</span>}
             </button>
           </div>
 

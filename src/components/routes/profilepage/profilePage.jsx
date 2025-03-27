@@ -6,8 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 export default function ProfilePage() {
+  //get data from the database
+  const data = useLoaderData();
+  console.log(data);
   const { currentUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -62,10 +66,11 @@ export default function ProfilePage() {
               <button>Create New Post</button>
             </Link>
           </div>
-          <List />
+          <List post={data} />
           <div className="title">
             <h1>Saved List</h1>
           </div>
+          <List post={data} />
         </div>
       </div>
 
