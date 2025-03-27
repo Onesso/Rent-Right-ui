@@ -10,8 +10,9 @@ import { useLoaderData } from "react-router-dom";
 
 export default function ProfilePage() {
   //get data from the database
-  const data = useLoaderData();
-  console.log(data);
+  // const data = useLoaderData();
+  // console.log(data);
+  const { userPosts = [], savedPosts = [] } = useLoaderData(); //new
   const { currentUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -66,11 +67,13 @@ export default function ProfilePage() {
               <button>Create New Post</button>
             </Link>
           </div>
-          <List post={data} />
+          {/* <List post={data} /> */}
+          <List posts={userPosts} type="userPosts" emptyMessage="You haven't created any listings yet" />
           <div className="title">
             <h1>Saved List</h1>
           </div>
-          <List post={data} />
+          {/* <List post={data} /> */}
+          <List posts={savedPosts} type="savedPosts" emptyMessage="You haven't saved any properties yet" />
         </div>
       </div>
 

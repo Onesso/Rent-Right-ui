@@ -2,14 +2,14 @@ import Card from "../card/card";
 // import listData from "../../lib/dummydata";
 import "./list.scss";
 
-export default function List({ post }) {
-  console.log("From the list component: ", post);
+export default function List({ posts = [], emptyMessage = "No items found" }) {
+  // console.log("From the list component: ", post);
 
   // Destructure the post object to get userPosts and savedPosts
-  const { userPosts = [], savedPosts = [] } = post || {};
+  // const { userPosts = [], savedPosts = [] } = post || {};
 
   // Combine both arrays if needed, or handle them separately
-  const allPosts = [...userPosts, ...savedPosts];
+  // const allPosts = [...userPosts, ...savedPosts];
 
   return (
     <div className="list">
@@ -17,7 +17,7 @@ export default function List({ post }) {
         <Card item={post} key={post.id} />
       ))} */}
 
-      {allPosts.length > 0 ? (
+      {/* {allPosts.length > 0 ? (
         allPosts.map((item) => (
           <Card
             key={`${item.id}-${item.userId}`} // More unique key
@@ -26,6 +26,13 @@ export default function List({ post }) {
         ))
       ) : (
         <p className="no-posts">No posts found</p>
+      )} */}
+      {posts.length > 0 ? (
+        posts.map((item) => (
+          <Card key={`${item.id}-${item.userId}`} item={item} />
+        ))
+      ) : (
+        <p className="no-posts">{emptyMessage}</p>
       )}
     </div>
   );
