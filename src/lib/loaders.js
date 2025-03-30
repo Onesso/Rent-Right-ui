@@ -11,7 +11,34 @@ export const listPageLoader = async ({ request, params }) => {
   return res.data;
 };
 
+// export const profilePageLoader = async () => {
+//   const res = await apiRequest("/user/profilePosts");
+//   const chat_res = await apiRequest("/chats");
+//   return {
+//     post: res.data,
+//     chat: chat_res.data
+//   }
+//   // return res.data;
+//   // return chat_res.data;
+// };
 export const profilePageLoader = async () => {
-  const res = await apiRequest("/user/profilePosts");
-  return res.data;
+  try {
+    const [profileData, chatData] = await Promise.all([
+      apiRequest("/user/profilePosts"),
+      apiRequest("/chats")
+    ]);
+
+    return {
+      userPosts: profileData.data?.userPosts || [],
+      savedPosts: profileData.data?.savedPosts || [],
+      chats: chatData.data || []
+    };
+  } catch (error) {
+    console.error("Loader error:", error);
+    return {
+      userPosts: [],
+      savedPosts: [],
+      chats: []
+    };
+  }
 };
