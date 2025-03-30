@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import "./chat.scss";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 import apiRequest from "../../lib/apiRequest";
 import { format } from "timeago.js";
 import { SocketContext } from "../../context/SocketContext";
-import { useRef } from "react";
 import { useNotificationStore } from "../../lib/notificationStore";
 
 export default function Chat({ chats }) {
-  // console.log(chats);
   const [chat, setChat] = useState(null);
   const { currentUser } = useContext(AuthContext);
-  // console.log(currentUser);
   const { socket } = useContext(SocketContext);
 
   // do not touch up
@@ -31,11 +27,6 @@ export default function Chat({ chats }) {
     }
   }, [chat?.messages]); // Trigger on message updates
 
-  // const messageEndRef = useRef();
-
-  // useEffect(() => {
-  //   messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  // }, [chat]);
 
   const handleOpenChat = async (id, receiver) => {
     try {
@@ -98,7 +89,7 @@ export default function Chat({ chats }) {
     <div className="Chat">
       <div className="messages">
         <h1>Messages</h1>
-        {chats.map((c) => (
+        {chats?.map((c) => (
           <div
             className="message"
             key={c.id}
@@ -129,7 +120,7 @@ export default function Chat({ chats }) {
             </span>
           </div>
 
-          <div className="center">
+          <div className="center"  ref={chatContainerRef}>
             {chat.messages.map((message) => (
               <div
                 className="chatMessage"
