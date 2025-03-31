@@ -13,7 +13,6 @@ export default function ProfilePage() {
   // const data = useLoaderData();
   // console.log(data);
   const { userPosts = [], savedPosts = [], chats = [] } = useLoaderData(); //new
-  console.log(chats);
   const { currentUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -88,7 +87,7 @@ export default function ProfilePage() {
 
       <div className="chatComponent">
         <div className="wrapper">
-          <Chat chats={chats} />
+          <Chat chats={chats}/>
         </div>
       </div>
     </div>
