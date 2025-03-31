@@ -5,6 +5,14 @@ export default function Contact() {
 
   // Format the date and time
   const formattedDateTime = now.format("YYYY MMMM Do");
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const inputs = Object.fromEntries(formData);
+    console.log(inputs);
+
+  }
   return (
     <div className="contactContainer">
       <div className="wrapper">
@@ -14,55 +22,57 @@ export default function Contact() {
 
         <div className="middle">
           <div className="left">
-            <h1>Drop Us A Line</h1>
+            <form  method="POST" action="https://formsubmit.co/odhiambofrank1965@gmail.com" enctype="multipart/form-data">
+              <h1>Drop Us A Line</h1>
 
-            <span>
-              Feel free to connect with us through our online channels for
-              update, news and more
-            </span>
+              <span>
+                Feel free to connect with us through our online channels for
+                update, news and more
+              </span>
 
-            <div className="inputPartition">
-              <div className="inputleft">
-                <div className="labelandinput">
-                  <label htmlFor="">Full Name:</label>
-                  <input type="text" placeholder="name"></input>
+              <div className="inputPartition">
+                <div className="inputleft">
+                  <div className="labelandinput">
+                    <label htmlFor="">Full Name:</label>
+                    <input name="username" type="text" placeholder="name"></input>
+                  </div>
+                </div>
+
+                <div className="inputRight">
+                  <div className="labelandinput">
+                    <label htmlFor="">Phone Number:</label>
+                    <input name="phone_number" type="number" placeholder="+254 70937882"></input>
+                  </div>
                 </div>
               </div>
 
-              <div className="inputRight">
-                <div className="labelandinput">
-                  <label htmlFor="">Phone Number:</label>
-                  <input type="number" placeholder="+254 70937882"></input>
+              <div className="inputPartition">
+                <div className="inputleft">
+                  <div className="labelandinput">
+                    <label htmlFor="">Email</label>
+                    <input name="email" type="email" placeholder="email"></input>
+                  </div>
+                </div>
+
+                <div className="inputRight">
+                  <div className="labelandinput">
+                    <label htmlFor="">Subject:</label>
+                    <input name="subject" type="text" placeholder="Enter Keyword"></input>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="inputPartition">
-              <div className="inputleft">
+              <div className="textinput">
                 <div className="labelandinput">
-                  <label htmlFor="">Email</label>
-                  <input type="email" placeholder="email"></input>
+                  <label htmlFor="">Your Message</label>
+                  <textarea name="message" placeholder="message"></textarea>
                 </div>
               </div>
 
-              <div className="inputRight">
-                <div className="labelandinput">
-                  <label htmlFor="">Subject:</label>
-                  <input type="text" placeholder="Enter Keyword"></input>
-                </div>
+              <div className="buttondiv">
+                <button>Send message</button>
               </div>
-            </div>
-
-            <div className="textinput">
-              <div className="labelandinput">
-                <label htmlFor="">Your Message</label>
-                <textarea name="message" placeholder="message"></textarea>
-              </div>
-            </div>
-
-            <div className="buttondiv">
-              <button>Send message</button>
-            </div>
+            </form>
           </div>
 
           <div className="right">
@@ -106,9 +116,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="bottom">
-          <div className="up">
-            {/* <hr className="custom-hr" /> */}
-          </div>
+          <div className="up">{/* <hr className="custom-hr" /> */}</div>
 
           <div className="intermediate">
             <div className="leftt">

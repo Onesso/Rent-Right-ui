@@ -13,7 +13,7 @@ export default function Map({ items }) {
   return (
     <MapContainer
       center={position}
-      zoom={10}
+      zoom={6}
       scrollWheelZoom={false}
       className="map"
     >
