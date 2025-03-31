@@ -9,6 +9,7 @@ import About from "./components/routes/about/about.jsx";
 import Contact from "./components/routes/contact/contact.jsx";
 import Profileupdatepage from "./components/routes/profileupdatepage/profileupdatepage.jsx";
 import NewPostPage from "./components/routes/newPostPage/newPostPage.jsx";
+// import Payment from "./components/routes/paymentprocessing/payment.jsx";
 import {
   singlePageLoader,
   listPageLoader,
@@ -72,6 +73,7 @@ function App() {
           path: "/add",
           element: <NewPostPage />,
         },
+
       ],
     },
   ]);

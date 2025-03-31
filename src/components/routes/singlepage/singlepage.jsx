@@ -6,10 +6,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../../lib/apiRequest";
+import Payment from "../../checkoutpayment/payment";
 
 export default function Singlepage() {
   const post = useLoaderData();
-  console.log(post);
+  const rent = post.price;
+  console.log(rent);
+  // console.log(post);
 
   const [saved, setSaved] = useState(post.isSaved);
   console.log(saved);
@@ -70,6 +73,10 @@ export default function Singlepage() {
                 __html: DOMPurify.sanitize(post.postDetail.desc),
               }}
             ></div>
+          </div>
+
+          <div className="payment">
+            <Payment rent={rent} />
           </div>
         </div>
       </div>
@@ -183,9 +190,23 @@ export default function Singlepage() {
             </button>
           </div>
 
-          {/* <p className="title">Process  payment</p>
-          <div className="checkout">
-            <button>
+          {/* <div
+            className="checkout"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <button
+              style={{
+                padding: "10px",
+                marginBottom: "50px",
+                marginTop: "50px",
+                cursor: "pointer",
+                borderRadius: "10px",
+              }}
+            >
               <span> Proceed to checkout</span>
             </button>
           </div> */}
