@@ -12,13 +12,14 @@ import NewPostPage from "./components/routes/newPostPage/newPostPage.jsx";
 import PostUpdatePage from "./components/routes/postupdatepage/postupdatepage.jsx";
 // import Payment from "./components/routes/paymentprocessing/payment.jsx";
 import Dashboard from "./components/routes/dashboard/dashboard.jsx";
+import PageNotFound from "../../tenant/src/components/routes/pagenotfound/pageNotFound.jsx";
 import {
   singlePageLoader,
   listPageLoader,
   profilePageLoader,
 } from "./lib/loaders.js";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +57,10 @@ function App() {
           path: "/contact",
           element: <Contact />,
         },
+        {
+          path: "*",
+          element: <PageNotFound />,
+        },
       ],
     },
     {
@@ -83,6 +88,10 @@ function App() {
           path: "/dashboard",
           element: <Dashboard />,
           loader: profilePageLoader,
+        },
+        {
+          path: "*",
+          element: <PageNotFound />,
         },
       ],
     },
