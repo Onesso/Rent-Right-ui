@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./card.scss";
 
 export default function Card({ item }) {
-  console.log("this is from the card component: ",item);
+  console.log("this is from the card component: ", item);
   return (
     <div className="Card">
       <Link to={`/${item?.id}`} className="imageContainer">
@@ -18,7 +18,6 @@ export default function Card({ item }) {
           <span>{item?.address}</span>
         </p>
         <p className="price">KSH {item?.price}</p>
-
         <div className="buttom">
           <div className="features">
             <div className="feature">
@@ -29,15 +28,6 @@ export default function Card({ item }) {
             <div className="feature">
               <img src="./bath.png" alt="bed icon" />
               <span>{item?.bathroom} bathroom</span>
-            </div>
-          </div>
-
-          <div className="icons">
-            <div className="icon">
-              <img src="./save.png" alt="save icon" />
-            </div>
-            <div className="icon">
-              <img src="./chat.png" alt="save icon" />
             </div>
           </div>
         </div>

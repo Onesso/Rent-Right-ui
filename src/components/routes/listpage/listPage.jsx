@@ -1,4 +1,3 @@
-// import listData from "../../../lib/dummydata";
 import "./listPage.scss";
 import Filter from "../../filter/filter";
 import Card from "../../card/card";

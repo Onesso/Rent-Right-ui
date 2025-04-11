@@ -1,14 +1,35 @@
+import "./postupdatepage.scss";
 import { useEffect, useState } from "react";
-import "./newPostPage.scss";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import UploadWidget from "../../uploadwidget/uploadWidget";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../../lib/apiRequest";
+import { useLocation } from "react-router-dom";
 
-function NewPostPage() {
-  const navigate = useNavigate();
+export default function PostUpdatePage() {
+  // prefilled data
+  const { state } = useLocation();
+  const postData = state?.postData; // Access the passed item
+  console.log("Received post data:", postData);
 
+  const [loadedData, setLoadedData] = useState(null);
+  // Fetch the data when the component mounts or when postData.id changes
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const responce = await apiRequest.get(`/post/${postData.id}`);
+        setLoadedData(responce.data);
+        console.log("Fetched data:", loadedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData();
+  }, [postData.id]);
+  console.log("loaded data", loadedData);
+
+  //end of prefilled data
   const [value, setValue] = useState("");
   const [images, setImages] = useState([]);
   const [error, setError] = useState("");
@@ -16,6 +37,8 @@ function NewPostPage() {
   const [location, setLocation] = useState(null);
   const [errorr, setErrorr] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   // 1. logic for coordinate
   const getLocation = () => {
@@ -135,11 +158,11 @@ function NewPostPage() {
 
     try {
       const query = `[out:json];
-          (
-              node["amenity"="school"](around:${radius},${lat},${lon});
-              node["amenity"="restaurant"](around:${radius},${lat},${lon});
-          );
-          out;`;
+            (
+                node["amenity"="school"](around:${radius},${lat},${lon});
+                node["amenity"="restaurant"](around:${radius},${lat},${lon});
+            );
+            out;`;
 
       const response = await fetch("https://overpass-api.de/api/interpreter", {
         method: "POST",
@@ -221,56 +244,69 @@ function NewPostPage() {
     }
   };
 
-  // automatic population of field
-  // Add this useEffect hook near your other useEffect hooks
+  //get the data from the postData and set the value of the form
+  const [formData, setFormData] = useState({
+    title: "",
+    price: "",
+    address: "",
+    city: "",
+    bedroom: "",
+    bathroom: "",
+    latitude: "",
+    longitude: "",
+    type: "rent",
+    property: "apartment",
+    utilities: "owner",
+    pet: "allowed",
+    income: "",
+    size: "",
+    school: "",
+    bus: "",
+    restaurant: "",
+  });
+
+  // Keep only this useEffect for form initialization
   useEffect(() => {
-    if (location) {
-      // Get the input elements
-      const latitudeInput = document.getElementById("latitude");
-      const longitudeInput = document.getElementById("longitude");
-
-      // Set their values
-      if (latitudeInput) latitudeInput.value = location.latitude;
-      if (longitudeInput) longitudeInput.value = location.longitude;
-
-      // Also auto-fill the address and city
-      const addressInput = document.getElementById("address");
-      const cityInput = document.getElementById("city");
-
-      if (addressInput && addressDetails.address !== "N/A") {
-        addressInput.value = addressDetails.address;
-      }
-      if (cityInput && addressDetails.city !== "N/A") {
-        cityInput.value = addressDetails.city;
-      }
-
-      //autofill for distance
-      const schoolInput = document.getElementById("school");
-      const restaurantInput = document.getElementById("restaurant");
-      if (schoolInput && nearbyPlaces.schools.length > 0) {
-        schoolInput.value = nearbyPlaces.schools[0].distance.toFixed(3) * 1000;
-      }
-
-      if (restaurantInput && nearbyPlaces.restaurants.length > 0) {
-        restaurantInput.value =
-          nearbyPlaces.restaurants[0].distance.toFixed(3) * 1000;
-      }
+    if (postData) {
+      setFormData({
+        title: postData.title || "",
+        price: postData.price || "",
+        address: postData.address || "",
+        city: postData.city || "",
+        bedroom: postData.bedroom || "",
+        bathroom: postData.bathroom || "",
+        latitude: postData.latitude || "",
+        longitude: postData.longitude || "",
+        type: postData.type || "rent",
+        property: postData.property || "apartment",
+        utilities: postData.utilities || "owner",
+        pet: postData.pet || "allowed",
+        income: postData.income || "",
+        size: postData.size || "",
+        school: postData.school || "",
+        bus: postData.bus || "",
+        restaurant: postData.restaurant || "",
+      });
+      setImages(postData.images || []); // For images
     }
-  }, [location, addressDetails]);
+  }, [postData]);
+  useEffect(() => {
+
+  }, [loadedData]);
 
   return (
     <div className="newPostPage">
       <div className="formContainer">
-        <h1>Add New Post</h1>
+        <h1>Update Post</h1>
         <div className="wrapper">
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="item">
               <label htmlFor="title">Title</label>
               <input id="title" name="title" type="text" />
             </div>
             <div className="item">
               <label htmlFor="price">Price</label>
-              <input id="price" name="price" type="number" />
+              <input id="price" name="price" type="number" min={0} />
             </div>
             <div className="item">
               <label htmlFor="address">Address</label>
@@ -280,12 +316,12 @@ function NewPostPage() {
               <label htmlFor="desc">Description</label>
               {/* <ReactQuill theme="snow" onChange={setValue} value={value} /> */}
               <div className="editorContainer">
-                <ReactQuill theme="snow" onChange={setValue} />
+                <ReactQuill theme="snow" />
               </div>
             </div>
             <div className="item">
               <label htmlFor="city">City</label>
-              <input id="city" name="city" type="text" />
+              <input id="city" name="city" type="text" value={formData.city} />
             </div>
             <div className="item">
               <label htmlFor="bedroom">Bedroom Number</label>
@@ -436,5 +472,3 @@ function NewPostPage() {
     </div>
   );
 }
-
-export default NewPostPage;

@@ -99,5 +99,40 @@
       object-fit: cover;
       border-radius: 5px;
     }
+    .geolocation{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      button{
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid gray;
+        background-color: snow;
+        cursor: pointer;
+
+        &:hover{
+          scale: 1.05;
+          transition: 0.2s;
+        }
+
+        &:active {
+          background-color: rgb(250, 218, 218);
+        }
+
+      }
+
+      .locationDataDetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        // align-items: center;
+      }
+    }
   }
 }

@@ -11,8 +11,7 @@ export default function Contact() {
     const formData = new FormData(e.target);
     const inputs = Object.fromEntries(formData);
     console.log(inputs);
-
-  }
+  };
   return (
     <div className="contactContainer">
       <div className="wrapper">
@@ -22,7 +21,11 @@ export default function Contact() {
 
         <div className="middle">
           <div className="left">
-            <form  method="POST" action="https://formsubmit.co/odhiambofrank1965@gmail.com" enctype="multipart/form-data">
+            <form
+              method="POST"
+              action="https://formsubmit.co/odhiambofrank1965@gmail.com"
+              enctype="multipart/form-data"
+            >
               <h1>Drop Us A Line</h1>
 
               <span>
@@ -34,14 +37,22 @@ export default function Contact() {
                 <div className="inputleft">
                   <div className="labelandinput">
                     <label htmlFor="">Full Name:</label>
-                    <input name="username" type="text" placeholder="name"></input>
+                    <input
+                      name="username"
+                      type="text"
+                      placeholder="name"
+                    ></input>
                   </div>
                 </div>
 
                 <div className="inputRight">
                   <div className="labelandinput">
                     <label htmlFor="">Phone Number:</label>
-                    <input name="phone_number" type="number" placeholder="+254 70937882"></input>
+                    <input
+                      name="phone_number"
+                      type="number"
+                      placeholder="+254 70937882"
+                    ></input>
                   </div>
                 </div>
               </div>
@@ -50,14 +61,22 @@ export default function Contact() {
                 <div className="inputleft">
                   <div className="labelandinput">
                     <label htmlFor="">Email</label>
-                    <input name="email" type="email" placeholder="email"></input>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="email"
+                    ></input>
                   </div>
                 </div>
 
                 <div className="inputRight">
                   <div className="labelandinput">
                     <label htmlFor="">Subject:</label>
-                    <input name="subject" type="text" placeholder="Enter Keyword"></input>
+                    <input
+                      name="subject"
+                      type="text"
+                      placeholder="Enter Keyword"
+                    ></input>
                   </div>
                 </div>
               </div>
@@ -95,9 +114,27 @@ export default function Contact() {
             <div className="SocialMedialinks">
               <label>Follow Us:</label>
               <div className="sociallinks">
-                <img src="/facebook.png" alt=" facebook" />
-                <img src="/instagram.png" alt="instagram" />
-                <img src="/youtube.png" alt="youtube" />
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/facebook.png" alt=" facebook" />
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/instagram.png" alt="instagram" />
+                </a>
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/youtube.png" alt="youtube" />
+                </a>
               </div>
             </div>
           </div>

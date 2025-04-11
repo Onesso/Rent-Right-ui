@@ -87,7 +87,7 @@ export default function ProfilePage() {
 
       <div className="chatComponent">
         <div className="wrapper">
-          <Chat chats={chats}/>
+          {/* <Chat chats={chats}/> */}
         </div>
       </div>
     </div>

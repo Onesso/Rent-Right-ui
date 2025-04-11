@@ -26,6 +26,15 @@ export default function Navbar() {
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
+        <div className="dashboard-link">
+          {currentUser ? (
+            <Link to="/dashboard">
+              <span>Dashboard</span>
+            </Link>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
 
       <div className="right">

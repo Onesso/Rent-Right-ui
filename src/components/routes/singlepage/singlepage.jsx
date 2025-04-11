@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../../lib/apiRequest";
-import Payment from "../../checkoutpayment/payment";
+
 
 export default function Singlepage() {
   const post = useLoaderData();
@@ -18,6 +18,8 @@ export default function Singlepage() {
   console.log(saved);
 
   const { currentUser } = useContext(AuthContext);
+
+  console.log("Current user: ", currentUser);
 
   const navigate = useNavigate();
 
@@ -39,6 +41,28 @@ export default function Singlepage() {
     } catch (error) {
       console.log(error);
       setSaved((prev) => !prev); // Rollback on error
+    }
+  };
+
+  const handledelete = async () => {
+    const confirmLogout = window.confirm(
+      `Are you sure you want to Delete ${post.title} ?`
+    );
+    console.log(post.id);
+    try {
+      const res = await apiRequest.delete("post/" + post.id);
+      console.log(res);
+      if (res.status === 200) {
+        console.log("Property deleted");
+        navigate("/list");
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        alert("You don't have permission to delete this post.");
+      } else {
+        alert("Network error. Try again later.");
+      }
+      console.log(error);
     }
   };
 
@@ -73,11 +97,16 @@ export default function Singlepage() {
                 __html: DOMPurify.sanitize(post.postDetail.desc),
               }}
             ></div>
+            <div>
+              <button onClick={handledelete} className="Delete-btn">
+                Delete Property
+              </button>
+            </div>
           </div>
 
-          <div className="payment">
+          {/* <div className="payment">
             <Payment rent={rent} />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -175,10 +204,10 @@ export default function Singlepage() {
 
           <p className="title">Reach Out</p>
           <div className="buttons">
-            <button>
+            {/* <button>
               <img src="./chat.png" alt="" />
               <span>send a message</span>
-            </button>
+            </button> */}
             <button
               onClick={handleSave}
               style={{

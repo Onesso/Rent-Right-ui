@@ -106,9 +106,27 @@
           font-weight: 300;
           font-size: medium;
         }
+        .Delete-btn {
+          padding: 10px 20px;
+          margin-top: 20px;
+          margin-bottom: 200px;
+          margin-left: 10px;
+          border: 1px solid black;
+          border-radius: 10px;
+          color: white;
+          background-color: rgba(255, 0, 0, 0.817);
+
+          &:hover {
+            scale: 1.05;
+            transition: 0.3s;
+          }
+
+          &:active {
+            background-color: red;
+            transition: none;
+          }
+        }
       }
-
-
     }
   }
 

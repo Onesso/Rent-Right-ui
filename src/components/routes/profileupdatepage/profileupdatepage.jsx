@@ -15,6 +15,9 @@ function ProfileUpdatePage() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    if (!window.confirm(`Are you sure you want to update your profile?`)) {
+      return;
+    }
     e.preventDefault();
     const formData = new FormData(e.target);
 
@@ -68,7 +71,7 @@ function ProfileUpdatePage() {
             <input id="password" name="password" type="password" />
           </div>
           <button>Update</button>
-          {error && <span>error</span>}
+          {error && <span>{error.message}</span>}
         </form>
       </div>
       <div className="sideContainer">
@@ -81,20 +84,12 @@ function ProfileUpdatePage() {
           alt=""
           className="avatar"
         />
-        {/* <UploadWidget
-          uwConfig={{
-            cloudName: "dxxdvid9d",       //this value is gotten from cloudinary account
-            uploadPreset: "rent-right",   //this value is gotten from cloudinary account
-            multiple: false,
-            maxImageFileSize: 2000000, //2mb
-            folder: "avatars",
-          }}
-          setState={setAvatar}
-        /> */}
+
         <UploadWidget
           uwConfig={{
             cloudName: "dxxdvid9d",
-            uploadPreset: "rent-right",
+            // uploadPreset: "rent-right",
+            uploadPreset: "ml_default",
             multiple: false,
             maxImageFileSize: 2000000,
             folder: "avatars",
