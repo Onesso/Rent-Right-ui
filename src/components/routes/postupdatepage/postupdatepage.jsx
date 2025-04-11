@@ -95,6 +95,9 @@ export default function PostUpdatePage() {
   };
 
   const handleSubmit = async (e) => {
+    const confirmLogout = window.confirm(
+      "Are you sure you want to update the property"
+    );
     e.preventDefault();
     setError(""); // Clear previous errors
 
@@ -137,11 +140,10 @@ export default function PostUpdatePage() {
 
     try {
       // *** IMPORTANT: Use PUT or PATCH for updates, and include the ID ***
-      //const res = await apiRequest.put(`/post/${postData.id}`, finalPayload); // Use PUT (or PATCH) and the post ID
-
-      //console.log("Update successful:", res.data);
+      const res = await apiRequest.put(`/post/${postData.id}`, finalPayload);
+      console.log(res.data);
       // Navigate after successful update, perhaps back to the post page
-      //navigate("/" + postData.id); // Or navigate where appropriate
+      navigate("/" + postData.id); // Or navigate where appropriate
     } catch (err) {
       console.error("Error updating post:", err);
       setError(err.response?.data?.message || "Failed to update post."); // Set a meaningful error

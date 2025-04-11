@@ -7,7 +7,6 @@ import { AuthContext } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../../lib/apiRequest";
 
-
 export default function Singlepage() {
   const post = useLoaderData();
   const rent = post.price;
@@ -97,16 +96,8 @@ export default function Singlepage() {
                 __html: DOMPurify.sanitize(post.postDetail.desc),
               }}
             ></div>
-            <div>
-              <button onClick={handledelete} className="Delete-btn">
-                Delete Property
-              </button>
-            </div>
           </div>
-
-          {/* <div className="payment">
-            <Payment rent={rent} />
-          </div> */}
+          <div style={{ marginTop: "500px" }}>span</div>
         </div>
       </div>
 
